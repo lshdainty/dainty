@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼즐 패널
-	//MainFrame mainFrame;
+	MainFrame mainFrame;	//메인 프레임 저장
 	JButton[] btn;	//버튼 배열 생성
 	int count;	//원본에서는 사용하는것이 없지만 이걸 클릭 카운트로 사용 예정
 	int game[];		//전체 게임 열과 행의 곱한 수
@@ -31,8 +31,8 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 	 * 픽셀을 읽거나 쓸 수 있다.
 	 */
 	
-	public PuzzlePanel() {	//생성자
-		//this.mainFrame = mainFrame;
+	public PuzzlePanel(MainFrame mainFrame) {	//생성자
+		this.mainFrame = mainFrame;	//생성된 프레임객체를 받아와서 저장한다.
 		
 		String x = JOptionPane.showInputDialog(null,"행의 숫자를 입력해주세요",JOptionPane.OK_CANCEL_OPTION);	//행을 입력받는다.
 		String y = JOptionPane.showInputDialog(null,"열의 숫자를 입력해주세요",JOptionPane.OK_CANCEL_OPTION);	//열을 입력받는다.
@@ -47,6 +47,7 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		mainFrame.setSize(original.getWidth(this),original.getHeight(this));	//프레임의 사이즈를 사진의 크기로 변경한다.
 		int width = original.getWidth(this)/col;	//넓이는 사진의 전체 넓이에서 열의 수만큼 나눈다.
 		int height = original.getHeight(this)/row;	//높이는 사진의 전체 높이에서 행의 수만큼 나눈다.
 		
@@ -141,7 +142,10 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 					JOptionPane.showMessageDialog(this, count+"번 클릭했습니다.");
 					//게임 재시작을 확인
 					int reStart = JOptionPane.showConfirmDialog(this,"restart?","exit?",JOptionPane.YES_NO_OPTION);
-					if(reStart==JOptionPane.YES_OPTION) {
+					if(reStart==JOptionPane.NO_OPTION) {
+						mainFrame.change("login");
+					}
+					else if(reStart==JOptionPane.YES_OPTION) {
 						count = 0;
 						shuffle();	//섞기
 						repaint();	//다시 그리기

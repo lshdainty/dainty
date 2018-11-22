@@ -24,16 +24,17 @@ public class DBPanel {
 		}
 		
 		// 2. 데이터베이스 연결
-		
+		/*
 		String url ="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
 		String id = "study";
 		String pw = "study";
+		*/
 		
-		/*
+		///*
 		String url = "jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";
 		String id = "s1501205";
 		String pw = "p1501205";
-		*/
+		//*/
 		try {
 			this.conn = DriverManager.getConnection(url, id, pw);
 			System.out.println("데이터베이스 연결 성공.");

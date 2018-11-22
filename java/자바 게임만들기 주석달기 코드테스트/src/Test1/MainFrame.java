@@ -4,45 +4,34 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class MainFrame extends JFrame{
-	//public LoginPanel login = null;
-	//public PuzzlePanel puzzlePanel = null;
+	public LoginPanel login = null;
+	public PuzzlePanel puzzlePanel = null;
 	
 	//생성자
 	public MainFrame() {	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("그림 퍼즐 만들기");
+		setTitle("그림 퍼즐 게임");
 		
-//		login = new LoginPanel(this);
-//		puzzlePanel = new PuzzlePanel(this);
-//		login.setSize(280,150);
-//		puzzlePanel.setSize(puzzlePanel.getWidth(),puzzlePanel.getHeight());
-//		this.add(login);
-//		setVisible(true);
-		
-		LoginPanel login = new LoginPanel();
-		setSize(280,150);
-		this.add(login);
-		setVisible(true);
-		
-		PuzzlePanel puzzlePanel = new PuzzlePanel();	//그림퍼즐 객체생성
-		setSize(puzzlePanel.getWidth(),puzzlePanel.getHeight());	//크기는 사진의 크기
-		setResizable(false);	//사이즈조정 불가
-		this.add(puzzlePanel);	//프레임에 panel추가
-		setVisible(true);	//눈에 보이게 하기
+		this.login = new LoginPanel(this);	//로그인 패널 생성
+		this.add(login);	//프레임에 로그인 패널 추가
+		this.setVisible(true);	//눈에 보이게 한다.
 	}	//ImagePuzzle01메소드
 	
-//	public void change(String panelName) {
-//		if(panelName.equals("login")) {
-//			getContentPane().removeAll();
-//			getContentPane().add(login);
-//			revalidate();
-//			repaint();
-//		}
-//		else {
-//			getContentPane().removeAll();
-//			getContentPane().add(puzzlePanel);
-//			revalidate();
-//			repaint();
-//		}
-//	}
+	//하나의 프레임에서 패널을 변경하기 위한 코드
+	public void change(String panelName) {
+		if(panelName.equals("login")) {	//패널 이름을 가져와서 login하고 같으면
+			getContentPane().removeAll();	//컨테이너에 있는 모든것을 가져와서 삭제하고
+			this.login = new LoginPanel(this);
+			getContentPane().add(login);	//로그인 패널을 추가한다.
+			revalidate();
+			repaint();
+		}
+		else {
+			getContentPane().removeAll();	//컨테이너에 있는 모든 것을 가져와서 삭제
+			this.puzzlePanel = new PuzzlePanel(this);	
+			getContentPane().add(puzzlePanel);	//게임 패널 추가
+			revalidate();
+			repaint();
+		}
+	}
 }	//ImagePuzzle01 class
