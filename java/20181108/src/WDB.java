@@ -6,23 +6,23 @@ public class WDB {
 		
 		File file = new File(name);
 		
-		//µğ·ºÅä¸®ÀÎÁö °Ë»ç
+		//ë””ë ‰í† ë¦¬ì¸ì§€ ê²€ì‚¬
 		if(file.isDirectory()) {
-			System.out.println(name + "´Â µğ·ºÅä¸®ÀÔ´Ï´Ù.");
-			//µğ·ºÅä¸®³»ÀÇ ÆÄÀÏÁ¤º¸¸¦ ÀĞ¾î¿À´Â ¸Ş¼Òµå list
+			System.out.println(name + "ëŠ” ë””ë ‰í† ë¦¬ì…ë‹ˆë‹¤.");
+			//ë””ë ‰í† ë¦¬ë‚´ì˜ íŒŒì¼ì •ë³´ë¥¼ ì½ì–´ì˜¤ëŠ” ë©”ì†Œë“œ list
 			String[] list = file.list();
 			
 			for(String s:list) {
 				File f = new File(name + "\\" + s);
 				System.out.println("----------------------------");
-				System.out.println("ÀÌ¸§ : " + f.getName());
-				System.out.println("°æ·Î : " + f.getPath());
-				System.out.println("ºÎ¸ğ: " + f.getParent());
-				System.out.println("µğ·ºÅä¸® ¿©ºÎ : " + f.isDirectory());
-				System.out.println("ÆÄÀÏ ¿©ºÎ : " + f.isFile());
+				System.out.println("ì´ë¦„ : " + f.getName());
+				System.out.println("ê²½ë¡œ : " + f.getPath());
+				System.out.println("ë¶€ëª¨ : " + f.getParent());
+				System.out.println("ë””ë ‰í† ë¦¬ ì—¬ë¶€ : " + f.isDirectory());
+				System.out.println("íŒŒì¼ ì—¬ë¶€ : " + f.isFile());
 			}
 		}else {
-			System.out.println(name + "´Â ÆÄÀÏ ÀÔ´Ï´Ù.");
+			System.out.println(name + "ëŠ” íŒŒì¼ ì…ë‹ˆë‹¤.");
 		}
 	}
 }

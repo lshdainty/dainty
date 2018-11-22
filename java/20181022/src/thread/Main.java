@@ -1,9 +1,9 @@
 package thread;
 
-/* 1. ThreadÅ¬·¡½º¸¦ »ó¼Ó¹Ş¾Æ Å¬·¡½º¸¦ ÀÛ¼º
- * 2. run¸Ş¼Òµå ÀçÁ¤ÀÇ
- * 3. Thread °´Ã¼ »ı¼º
- * 4. start¸Ş¼Òµå È£Ãâ
+/* 1. Threadí´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì•„ í´ë˜ìŠ¤ë¥¼ ì‘ì„±
+ * 2. runë©”ì†Œë“œ ì¬ì •ì˜
+ * 3. Thread ê°ì²´ ìƒì„±
+ * 4. startë©”ì†Œë“œ í˜¸ì¶œ
  */
 
 class MyThread extends Thread{
@@ -16,10 +16,10 @@ class MyThread extends Thread{
 	}
 }
 
-/* 11. Runnable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½º¸¦ ÀÛ¼ºÇÑ´Ù.
- * 12. run¸Ş¼Òµå ÀçÁ¤ÀÇ
- * 13. Thread °´Ã¼¸¦ »ı¼ºÇÏ°í ÀÌ¶§ MyRunnable°´Ã¼¸¦ ÀÎ¼ö·Î Àü´Ş½ÃÅ²´Ù.
- * 14. Thread °´Ã¼ÀÇ start¸Ş¼Òµå¸¦ ½ÇÇàÇÑ´Ù.
+/* 11. Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤ë¥¼ ì‘ì„±í•œë‹¤.
+ * 12. runë©”ì†Œë“œ ì¬ì •ì˜
+ * 13. Thread ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ì´ë•Œ MyRunnableê°ì²´ë¥¼ ì¸ìˆ˜ë¡œ ì „ë‹¬ì‹œí‚¨ë‹¤.
+ * 14. Thread ê°ì²´ì˜ startë©”ì†Œë“œë¥¼ ì‹¤í–‰í•œë‹¤.
  */
 
 class MyRunnable implements Runnable{
@@ -40,7 +40,7 @@ public class Main {
 		MyThread t1 = new MyThread();
 		MyThread t2 = new MyThread();
 		
-		//start¸Ş¼Òµå È£Ãâ
+		//startë©”ì†Œë“œ í˜¸ì¶œ
 		t.start();
 		t1.start();
 		t2.start();

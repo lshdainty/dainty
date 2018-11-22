@@ -54,9 +54,9 @@ class Buffer{
 	}
 	
 	public synchronized void put(int data) {
-		while(isFull()) {	//¹öÆÛ¿¡ »óÇ°ÀÌ ÀÌ¹Ì ÀÖÀ» °æ¿ì
+		while(isFull()) {	//ë²„í¼ì— ìƒí’ˆì´ ì´ë¯¸ ìˆì„ ê²½ìš°
 			try {
-				wait();	//»ı»êÀÚ°¡ ±â´Ù·Á¾ßÇÑ´Ù.
+				wait();	//ìƒì‚°ìê°€ ê¸°ë‹¤ë ¤ì•¼í•œë‹¤.
 			} catch (InterruptedException e) {
 
 			}
@@ -68,7 +68,7 @@ class Buffer{
 	}
 	
 	public void print() {
-		System.out.print("¹öÆÛ: ");
+		System.out.print("ë²„í¼ : ");
 		for(int i=0; i<3; i++) {
 			if(i<pos) {
 				System.out.print(dataList.get(i) + " ");
@@ -90,7 +90,7 @@ class Producer implements Runnable{
 	public void run() {
 		for(int i=0; i<10; i++) {
 			buffer.put(i);
-			System.out.println("»ı»êÀÚ : " + i + "¹ø ÄÉÀÍÀ» »ı»êÇÏ¿´½À´Ï´Ù.");
+			System.out.println("ìƒì‚°ì :  " + i + "ë²ˆ ì¼€ìµì„ ìƒì‚°í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			try{
 				Thread.sleep((int)(Math.random()*100));
 			}catch(Exception e) {
@@ -110,7 +110,7 @@ class Consumer implements Runnable{
 	public void run() {
 		for(int i=0; i<10; i++) {
 			int data = buffer.get();
-			System.out.println("¼ÒºñÀÚ : " + data + "¹ø ÄÉÀÍÀ» ¼ÒºñÇÏ¿´½À´Ï´Ù.");
+			System.out.println("ì†Œë¹„ì : " + data + "ë²ˆ ì¼€ìµì„ ì†Œë¹„í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			try {
 				Thread.sleep((int)(Math.random()*100));
 			}catch(Exception e) {

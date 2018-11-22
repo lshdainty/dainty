@@ -5,12 +5,12 @@ public class wdb {
 	public static void main(String[] args) {
 		MyDb myObject = new MyDb();
 		myObject.connectDB();
-		//myObject.insertmember();	Ã¥ Á¦¸ñ¸¸ Á¶È¸
-		//myObject.select();	¸ğµç ÇàÀÇ ¸ğµç ¿­À» Á¶È¸
-		//myObject.allRetrieve();	¿­Á¶È¸
-		//myObject.deleteBookID(6);	Çà»èÁ¦
+		//myObject.insertmember();	ì±… ì œëª©ë§Œ ì¡°íšŒ
+		//myObject.select();	ëª¨ë“  í–‰ì˜ ëª¨ë“  ì—´ì„ ì¡°íšŒ
+		//myObject.allRetrieve();	ì—´ì¡°íšŒ
+		//myObject.deleteBookID(6);	í–‰ì‚­ì œ
 		myObject.allRetrieve();
-		//prepareStatement¸¦ ÀÌ¿ëÇÑ Äõ¸®°´Ã¼ »ç¿ë
+		//prepareStatementë¥¼ ì´ìš©í•œ ì¿¼ë¦¬ê°ì²´ ì‚¬ìš©
 		myObject.insert(7,"test","test","test",25000);
 		myObject.allRetrieve();
 	}

@@ -16,9 +16,9 @@ public class Test {
 		int x,y;
 	
 		Scanner input = new Scanner(System.in);
-		System.out.print("³ª´©¾îÁö´Â ¼ö : ");
+		System.out.print("ë‚˜ëˆ„ì–´ì§€ëŠ” ìˆ˜ : ");
 		x = input.nextInt();
-		System.out.print("³ª´©´Â ¼ö : ");
+		System.out.print("ë‚˜ëˆ„ëŠ” ìˆ˜ : ");
 		y = input.nextInt();
 		try{
 			int result = x / y;
@@ -26,9 +26,9 @@ public class Test {
 			y = 1;
 		}finally {
 			int result = x / y;
-			System.out.println("¿¹¿ÜÃ³¸®±¸¹® finally.");
+			System.out.println("ì˜ˆì™¸ì²˜ë¦¬êµ¬ë¬¸ finally.");
 		}
-		System.out.println("ÇÁ·Î±×·¥Àº °è¼Ó ÁøÇà");
+		System.out.println("í”„ë¡œê·¸ë¨ì€ ê³„ì† ì§„í–‰");
 	}
 	
 	void ArrayIndexOutOf() {
@@ -41,22 +41,22 @@ public class Test {
 			} 
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("ÀÎµ¦½º" + i + "»ç¿ëÇÒ ¼ö ¾ø³×¿ä");
+			System.out.println("ì¸ë±ìŠ¤" + i + "ì‚¬ìš©í•  ìˆ˜ ì—†ë„¤ìš”");
 		}
 	}
 	
-	void getBookList() {	//db¿¡ ÀÖ´Â Ã¥¸®½ºÆ® °¡Á®¿Í¼­ ¿¹¿ÜÃ³¸®
+	void getBookList() {	//dbì— ìˆëŠ” ì±…ë¦¬ìŠ¤íŠ¸ ê°€ì ¸ì™€ì„œ ì˜ˆì™¸ì²˜ë¦¬
 		
-		//1.µå¶óÀÌ¹ö ·Îµù
+		//1.ë“œë¼ì´ë²„ ë¡œë”©
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("µå¶óÀÌ¹ö¸¦ ·ÎµùÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ë“œë¼ì´ë²„ë¥¼ ë¡œë”©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
-		//2.¿¬°á
+		//2.ì—°ê²°
 		String url = "jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";
 		String user = "s1501205";
 		String password = "p1501205";
@@ -68,16 +68,16 @@ public class Test {
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("db¿¡ ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("dbì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
-		//3.statement °´Ã¼»ı¼º
+		//3.statement ê°ì²´ìƒì„±
 		try {
 			stmt = conn.createStatement();
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Statement°´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾ø³×¿ä");
+			System.out.println("Statementê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ë„¤ìš”");
 			try {
 				conn.close();
 			} catch (SQLException e1) {
@@ -87,14 +87,14 @@ public class Test {
 			return;
 		}
 		
-		//4.Äõ¸® ½ÇÇà ¹× °á°ú ¹İÈ¯
+		//4.ì¿¼ë¦¬ ì‹¤í–‰ ë° ê²°ê³¼ ë°˜í™˜
 		String sql = "select * from books";
 		
 		try {
 			rs = stmt.executeQuery(sql);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Äõ¸®¸¦ ½ÇÇàÇÒ ¼ö ¾ø³×¿ä");
+			System.out.println("ì¿¼ë¦¬ë¥¼ ì‹¤í–‰í•  ìˆ˜ ì—†ë„¤ìš”");
 			try{
 				conn.close();
 			}catch(SQLException e1) {
@@ -102,14 +102,14 @@ public class Test {
 			}
 		}
 		
-		//5.°á°úÃ³¸®
+		//5.ê²°ê³¼ì²˜ë¦¬
 		try {
 			while(rs.next()) {
 				String bookName = rs.getString(2);
 				System.out.println(bookName);
 			}
 		}catch(SQLException e) {
-			System.out.println("Ä¿¼­¸¦ Á¶ÀÛÇÏ´Âµ¥ ¹®Á¦°¡ ÀÖ³×¿ä");
+			System.out.println("ì»¤ì„œë¥¼ ì¡°ì‘í•˜ëŠ”ë° ë¬¸ì œê°€ ìˆë„¤ìš”");
 		}finally {
 			try {
 				rs.close();
@@ -117,10 +117,10 @@ public class Test {
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}
-			System.out.println("db¿¬°áÁ¾·á");
+			System.out.println("dbì—°ê²°ì¢…ë£Œ");
 		}
 		
-		//6.¿¬°áÁ¾·á
+		//6.ì—°ê²°ì¢…ë£Œ
 	}
 	
 	void getBookListThrows() throws ClassNotFoundException {

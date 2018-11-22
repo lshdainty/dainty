@@ -11,15 +11,15 @@ import java.util.Scanner;
 public class WDB {
 
 	public static void main(String[] args) {
-		//Å¬¶óÀÌ¾ğÆ®¸¦ »ı¼º
-		//1.¼ÒÄÏÀ¸·Î ¼­¹ö¿¡ Á¢¼Ó
+		//í´ë¼ì´ì–¸íŠ¸ë¥¼ ìƒì„±
+		//1. ì†Œì¼“ìœ¼ë¡œ ì„œë²„ì— ì ‘ì†
 		Socket socket = null;
 		try {
 			socket = new Socket("39.127.8.230",5555);
 			PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
 			
-			//2.9¸¦ ÀÔ·ÂÇÒ ¶§ ±îÁö °è¼Ó µ¥ÀÌÅÍ¸¦ º¸³»°í
-			//9¸¦ ÀÔ·ÂÇÏ¸é Á¢¼ÓÀ» Á¤·áÇÑ´Ù.
+			//2. 9ë¥¼ ì…ë ¥í•  ë•Œê¹Œì§€ ê³„ì† ë°ì´í„°ë¥¼ ë³´ë‚´ê³ 
+			//9ë¥¼ ì…ë ¥í•˜ë©´ ì ‘ì†ì„ ì¢…ë£Œí•œë‹¤.
 			Scanner scan = new Scanner(System.in);
 			String data=null;
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

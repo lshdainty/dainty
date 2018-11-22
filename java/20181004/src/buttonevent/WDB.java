@@ -1,9 +1,9 @@
 package buttonevent;
 
-// ÀÌº¥Æ® ±¸Çö¹æ¹ý
-// 1.µ¶¸³ÀûÀÎ Å¬·¡½º¸¦ ÀÛ¼º
-// 2.³»ºÎ Å¬·¡½º·Î ÀÛ¼º(ÇØ´çµÈ Å¬·¡½º¿¡¼­¸¸ »ç¿ë°¡´É)
-// 3.addActionListener ¸Þ¼Òµå¿¡¼­ ¹«¸íÅ¬·¡½º ÀÛ¼º
+// ì´ë²¤íŠ¸ êµ¬í˜„ë°©ë²•
+// 1.ë…ë¦½ì ì¸ í´ëž˜ìŠ¤ë¥¼ ìž‘ì„±
+// 2.ë‚´ë¶€ í´ëž˜ìŠ¤ë¡œ ìž‘ì„±(í•´ë‹¹ëœ í´ëž˜ìŠ¤ì—ì„œë§Œ ì‚¬ìš©ê°€ëŠ¥)
+// 3.addActionListener ë©”ì†Œë“œì—ì„œ ë¬´ëª…í´ëž˜ìŠ¤ ìž‘ì„±
 
 public class WDB {
 

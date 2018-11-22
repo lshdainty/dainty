@@ -14,9 +14,9 @@ public class Main {
 		*/
 		
 		/*
-		//Á¤¼öÇü ¹Ú½º
+		//ì •ìˆ˜í˜• ë°•ìŠ¤
 		Box<Integer> b1 = new Box<Integer>();
-		//¹®ÀÚÇü ¹Ú½º
+		//ë¬¸ìí˜• ë°•ìŠ¤
 		Box<String> bs = new Box<String>();
 		
 		b1.set(11);
@@ -30,17 +30,17 @@ public class Main {
 		*/
 		
 		ArrayList<String> list = new ArrayList<String>();
-		//¿ø¼Ò¸¦ ¸®½ºÆ® ¸Ç ³¡¿¡ »ğÀÔ
-		list.add("¿ìÀ¯");
-		list.add("»§");
-		list.add("¹öÅÍ");
+		//ì›ì†Œë¥¼ ë¦¬ìŠ¤íŠ¸ ë§¨ ëì— ì‚½ì…
+		list.add("ìš°ìœ ");
+		list.add("ë¹µ");
+		list.add("ë²„í„°");
 		
 		for(int i=0; i<list.size(); i++) {
 			System.out.println(list.get(i));
 		}
 		System.out.println("---------------------------------");
 		
-		list.add(1,"»ç°ú");
+		list.add(1,"ì‚¬ê³¼");
 		Iterator<String> iter = list.iterator();
 		
 		for(; iter.hasNext();) {
@@ -64,21 +64,21 @@ public class Main {
 		
 		System.out.println("---------------------------------");
 		
-		list.add("»ç°ú");
+		list.add("ì‚¬ê³¼");
 		for(String s : list) {
 			System.out.println(  s);
 		}
 		
 		System.out.println("---------------------------------");
 		
-		//Ã¹¹øÂ°ºÎÅÍ °Ë»ö
-		int index = list.indexOf("»ç°ú");
+		//ì²«ë²ˆì§¸ë¶€í„° ê²€ìƒ‰
+		int index = list.indexOf("ì‚¬ê³¼");
 		System.out.println(index);
 		
 		System.out.println("---------------------------------");
 		
-		//¸¶Áö¸·ºÎÅÍ °Ë»ö
-		index = list.lastIndexOf("»ç°ú");
+		//ë§ˆì§€ë§‰ë¶€í„° ê²€ìƒ‰
+		index = list.lastIndexOf("ì‚¬ê³¼");
 		System.out.println(index);
 	}
 }
@@ -102,7 +102,7 @@ class BoxString{
 }
 */
 
-//ÀÌ·¯ÇÑ ºÒÆíÀ¸·Î Á¦³×¸¯À» ¸¸µé¾ú°í ¹ØÃ³·³ º¯È¯ÇÑ´Ù
+//ì´ëŸ¬í•œ ë¶ˆí¸ìœ¼ë¡œ ì œë„¤ë¦­ì„ ë§Œë“¤ì—ˆê³  ë°‘ì²˜ëŸ¼ ë³€í™˜í•œë‹¤
 class Box<T>{
 	private T data;
 	void set(T o) {data = o;}

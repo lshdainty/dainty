@@ -13,15 +13,15 @@ public class MyPanel extends JPanel{
 	
 	public MyPanel() {
 		setLayout(new BorderLayout());
-		JButton b = new JButton("½ÅÈ£µî º¯°æ");
+		JButton b = new JButton("ì‹ í˜¸ë“± ë³€ê²½");
 		b.addActionListener(new MyActionListener(this));
 		add(b,BorderLayout.SOUTH);
 		
-		//Å¸ÀÌ¹öÃ³¸®
+		//íƒ€ì´ë²„ì²˜ë¦¬
 		Timer timer = new Timer();
 		MyTimerTask task = new MyTimerTask(this);
 		timer.schedule(task,10000,10000);
-		//                  Áö¿¬½Ã°£ ,¹İº¹½Ã°£(ms)
+		//                  ì§€ì—°ì‹œê°„ ,ë°˜ë³µì‹œê°„(ms)
 	}
 	
 	protected void paintComponent(Graphics g) {

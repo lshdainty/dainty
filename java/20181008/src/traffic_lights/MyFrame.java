@@ -7,7 +7,7 @@ public class MyFrame extends JFrame{
 	MyFrame(){
 		setSize(300,500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("½ÅÈ£µî");
+		setTitle("ì‹ í˜¸ë“±");
 		
 		JPanel panel = new MyPanel();
 		

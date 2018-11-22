@@ -11,7 +11,7 @@ public class MyListener1 implements ActionListener{
 	JPanel myPanel = null;
 	JButton button = null;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public MyListener1(JPanel myPanel) {
 		this.myPanel = myPanel;
 	}
@@ -21,9 +21,9 @@ public class MyListener1 implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		JButton button1 = (JButton)e.getSource();
 		
-		if(button1.getText().equals("ÇÎÅ©»ö"))
+		if(button1.getText().equals("í•‘í¬ìƒ‰"))
 			myPanel.setBackground(Color.PINK);
-		else if(button1.getText().equals("³ë¶õ»ö"))
+		else if(button1.getText().equals("ë…¸ë€ìƒ‰"))
 			myPanel.setBackground(Color.YELLOW);
 	}
 }

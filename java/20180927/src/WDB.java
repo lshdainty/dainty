@@ -9,42 +9,42 @@ class MyPanel extends JPanel{
    protected void paintComponent(Graphics g) {
       // TODO Auto-generated method stub
       super.paintComponent(g);
-      g.drawString("ÀÌ»óÇõ",230,470);
-      g.drawLine(0,0,500,0);	//Äµ¹ö½º Å×µÎ¸®
-      g.drawLine(0,0,0,500);	//Äµ¹ö½º Å×µÎ¸®
-      g.drawLine(500,0,500,500);	//Äµ¹ö½º Å×µÎ¸®
-      g.drawLine(0,500,500,500);	//Äµ¹ö½º Å×µÎ¸®
-      g.drawOval(150,50,200,200);	//¾ó±¼
-      g.drawArc(195,80,50,50,0,180);	//¿Ş´«½ç
-      g.drawOval(200,90,40,40);	//¿Ş´«
+      g.drawString("ì´ìƒí˜",230,470);
+      g.drawLine(0,0,500,0);	//ìº”ë²„ìŠ¤ í…Œë‘ë¦¬
+      g.drawLine(0,0,0,500);	//ìº”ë²„ìŠ¤ í…Œë‘ë¦¬
+      g.drawLine(500,0,500,500);	//ìº”ë²„ìŠ¤ í…Œë‘ë¦¬
+      g.drawLine(0,500,500,500);	//ìº”ë²„ìŠ¤ í…Œë‘ë¦¬
+      g.drawOval(150,50,200,200);	//ì–¼êµ´
+      g.drawArc(195,80,50,50,0,180);	//ì™¼ëˆˆì¹
+      g.drawOval(200,90,40,40);	//ì™¼ëˆˆ
       g.setColor(Color.black);
-      g.fillOval(205, 100, 30, 30);	//¿Ş´«µ¿ÀÚ
-      g.fillOval(260, 100, 30, 30);	//¿À¸¥´«µ¿ÀÚ
-      g.drawOval(255,90,40,40);	//¿À¸¥´«
-      g.drawArc(250,80,50,50,0,180);	//¿Ş´«½ç
-      g.drawArc(215,170,70,70,180,180);	//ÀÔ
-      g.drawLine(250, 250, 250, 400);	//¸öÅë
-      g.drawLine(250, 250, 150, 300);	//¿ŞÆÈ
-      g.drawLine(250, 250, 350, 300);	//¿À¸¥ÆÈ
-      g.drawLine(250, 400, 150, 450);	//¿Ş´Ù¸®
-      g.drawLine(250, 400, 350, 450);	//¿À¸¥´Ù¸®
+      g.fillOval(205, 100, 30, 30);	//ì™¼ëˆˆë™ì
+      g.fillOval(260, 100, 30, 30);	//ì˜¤ë¥¸ëˆˆë™ì
+      g.drawOval(255,90,40,40);	//ì˜¤ë¥¸ëˆˆ
+      g.drawArc(250,80,50,50,0,180);	//ì™¼ëˆˆì¹
+      g.drawArc(215,170,70,70,180,180);	//ì…
+      g.drawLine(250, 250, 250, 400);	//ëª¸í†µ
+      g.drawLine(250, 250, 150, 300);	//ì™¼íŒ”
+      g.drawLine(250, 250, 350, 300);	//ì˜¤ë¥¸íŒ”
+      g.drawLine(250, 400, 150, 450);	//ì™¼ë‹¤ë¦¬
+      g.drawLine(250, 400, 350, 450);	//ì˜¤ë¥¸ë‹¤ë¦¬
       g.setColor(Color.pink);
-      g.fillOval(205,130,90,70);	//ÄÚ
+      g.fillOval(205,130,90,70);	//ì½”
       g.setColor(Color.white);
       g.fillOval(210, 150, 30, 30);	
       g.fillOval(260, 150, 30, 30);
    }
-   // ±×¸²À» ±×¸®±â À§ÇØ ÇÊ¿äÇÑ ¸Ş¼Òµå¸¦ overrideÇØ¾ßÇÑ´Ù°í Çß´Ù.
+   // ê·¸ë¦¼ì„ ê·¸ë¦¬ê¸° ìœ„í•´ í•„ìš”í•œ ë©”ì†Œë“œë¥¼ overrideí•´ì•¼í•œë‹¤ê³  í–ˆë‹¤.
    
 }
 
 class MyFrame extends JFrame {
    public MyFrame() {
-      setTitle("±×·¡ÇÈÅ×½ºÆ®");
+      setTitle("ê·¸ë˜í”½í…ŒìŠ¤íŠ¸");
       setSize(600,600);
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setVisible(true);
-      // PanelÀ» »ı¼ºÇÏ¿© Ãß°¡ÇÑ´Ù. 
+      // Panelì„ ìƒì„±í•˜ì—¬ ì¶”ê°€í•œë‹¤. 
       MyPanel myPanel = new MyPanel();
       add(myPanel);
       

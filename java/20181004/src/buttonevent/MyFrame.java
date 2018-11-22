@@ -11,38 +11,38 @@ public class MyFrame extends JFrame {
 	
 	private JButton button;
 	
-//	public class MyListener implements ActionListener {	³»ºÎ Å¬·¡½º
+//	public class MyListener implements ActionListener {	ë‚´ë¶€ í´ë˜ìŠ¤
 //		
 //		int count=0;
 //		
 //		@Override
 //		public void actionPerformed(ActionEvent e) {
 //			JButton button1 = (JButton)e.getSource();
-//			if(button1.getText().equals("¹öÆ° ´©¸§"))
-//				button1.setText("¹öÆ°À» ´©¸£¼¼¿ä");
+//			if(button1.getText().equals("ë²„íŠ¼ ëˆ„ë¦„"))
+//				button1.setText("ë²„íŠ¼ì„ ëˆ„ë¥´ì„¸ìš”");
 //			else
-//				button1.setText("¹öÆ° ´©¸§");	
+//				button1.setText("ë²„íŠ¼ ëˆ„ë¦„");	
 //		}
 //	}
 	
-	MyFrame(){	//»ı¼ºÀÚ
+	MyFrame(){	//ìƒì„±ì
 		this.setSize(300,200);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("¹öÆ° ÀÌº¥Æ® ¿¹Á¦");
+		this.setTitle("ë²„íŠ¼ ì´ë²¤íŠ¸ ì˜ˆì œ");
 		this.setLayout(new FlowLayout());
-		button = new JButton("¹öÆ°À» ´©¸£½Ã¿À");
+		button = new JButton("ë²„íŠ¼ì„ ëˆ„ë¥´ì‹œì˜¤");
 		
-		button.addActionListener(new ActionListener() {	//¹«¸íÅ¬·¡½º
+		button.addActionListener(new ActionListener() {	//ë¬´ëª…í´ë˜ìŠ¤
 			
 			int count=0;
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JButton button1 = (JButton)e.getSource();
-				if(button1.getText().equals("¹öÆ° ´©¸§"))
-					button1.setText("¹öÆ°À» ´©¸£¼¼¿ä");
+				if(button1.getText().equals("ë²„íŠ¼ ëˆ„ë¦„"))
+					button1.setText("ë²„íŠ¼ì„ ëˆ„ë¥´ì„¸ìš”");
 				else
-					button1.setText("¹öÆ° ´©¸§");	
+					button1.setText("ë²„íŠ¼ ëˆ„ë¦„");	
 			}
 		});
 		

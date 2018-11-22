@@ -3,25 +3,25 @@ import java.io.*;
 public class WDB {
 
 	public static void main(String[] args) {
-		//ÆÄÀÏ·ÎºÎÅÍ ¹®ÀÚ ´ÜÀ§·Î µ¥ÀÌÅÍ¸¦ ÀÐ¾î¿À´Â ÀÛ¾÷À» ÇÏ´Â 
-		//Å¬·¡½º : FileReader
+		//íŒŒì¼ë¡œë¶€í„° ë¬¸ìž ë‹¨ìœ„ë¡œ ë°ì´í„°ë¥¼ ì½ì–´ì˜¤ëŠ” ìž‘ì—…ì„ í•˜ëŠ”
+		//í´ëž˜ìŠ¤ : FileReader
 		FileReader fi;
 		
-		//ÆÄÀÏ·Î ¹®ÀÚ ´ÜÀ§·Î µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â ÀÛ¾÷À» ÇÏ´Â
-		//Å¬·¡½º : FileWriter
+		//íŒŒì¼ë¡œë¶€í„° ë¬¸ìž ë‹¨ìœ„ë¡œ ë°ì´í„°ë¥¼ ì½ì–´ì˜¤ëŠ” ìž‘ì—…ì„ í•˜ëŠ”
+		//í´ëž˜ìŠ¤ : FileWriter
 		FileWriter fo;
 		
 		try {
-			//ÆÄÀÏÀ» ÀÐ±âÀ§ÇÑ °´Ã¼¸¦ »ý¼º
-			fi = new FileReader("D:\\input.txt");	//Æ¯¼ö¹®ÀÚÀÌ¹Ç·Î \ÇÏ³ªÀÌ¸é ÀÎ½ÄºÒ°¡ ±×·¡¼­ 2°³¸¦ »ç¿ëÇØ¾ß °¡´É
+			//íŒŒì¼ì„ ì½ê¸°ìœ„í•œ ê°ì²´ë¥¼ ìƒì„±
+			fi = new FileReader("D:\\input.txt");	//íŠ¹ìˆ˜ë¬¸ìžì´ë¯€ë¡œ \í•˜ë‚˜ì´ë©´ ì¸ì‹ë¶ˆê°€ ê·¸ëž˜ì„œ 2ê°œë¥¼ ì‚¬ìš©í•´ì•¼ ê°€ëŠ¥
 			
-			//ÆÄÀÏ¿¡ ¾²±âÀ§ÇÑ °´Ã¼¸¦ »ý¼º
+			//íŒŒì¼ì— ì“°ê¸°ìœ„í•œ ê°ì²´ë¥¼ ìƒì„±
 			fo = new FileWriter("D:\\output.txt");
 			
-			//ÇÑ ¹ÙÀÌÆ® ÀÐ¾î¼­ ÀúÀåÇÏ´Â ¹Ýº¹±¸Á¶
+			//í•œ ë°”ì´íŠ¸ ì½ì–´ì„œ ì €ìž¥í•˜ëŠ” ë°˜ë³µêµ¬ì¡°
 			int b;
-			while((b = fi.read()) != -1) {	//ÆÄÀÏÀÌ ¹ÙÀÌÆ®´ÜÀ§·Î ÀÐ´Ù°¡ ÆÄÀÏÀÇ ³¡À» º¸¸é -1ÀÌ´Ù.
-				//ÀúÀåÇÏ´Â°Å
+			while((b = fi.read()) != -1) {	//íŒŒì¼ì´ ë°”ì´íŠ¸ë‹¨ìœ„ë¡œ ì½ë‹¤ê°€ íŒŒì¼ì˜ ëì„ ë³´ë©´ -1ì´ë‹¤.
+				//ì €ìž¥í•˜ëŠ”ê±°
 				fo.write(b);
 				System.out.print((char)b + " ");
 			}
@@ -31,7 +31,7 @@ public class WDB {
 			if(fo != null) {
 				fo.close();
 			}
-		} catch (IOException e) {	//ioExceptionÀº FilenotFoundÀÇ ºÎ¸ðÂÊÀÌ´Ù.
+		} catch (IOException e) {	//ioExceptionì€ FilenotFoundì˜ ë¶€ëª¨ìª½ì´ë‹¤.
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

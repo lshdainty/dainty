@@ -11,12 +11,12 @@ import javax.swing.JTextField;
 
 public class MyFrame3 extends JFrame {
 
- // »ı¼ºÀÚ
+ // ìƒì„±ì
 
  public MyFrame3() {
   setSize(500, 300);
   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  setTitle("ÀÌ»óÇõ");
+  setTitle("ì´ìƒí˜");
 
   this.setLayout(new GridLayout(3, 1));
 
@@ -25,18 +25,18 @@ public class MyFrame3 extends JFrame {
   JPanel panel3 = new JPanel();
 
   panel1.setLayout(new FlowLayout(FlowLayout.CENTER));
-  JLabel label1_1 = new JLabel("ÇĞ¹ø");
+  JLabel label1_1 = new JLabel("í•™ë²ˆ");
   panel1.add(label1_1);
   
   JTextField text1_2 = new JTextField(15);
   text1_2.setText("1501205");
   panel1.add(text1_2);
   
-  JLabel label1_3 = new JLabel("ÀÌ¸§");
+  JLabel label1_3 = new JLabel("ì´ë¦„");
   panel1.add(label1_3);
   
   JTextField text1_4 = new JTextField(15);
-  text1_4.setText("ÀÌ»óÇõ");
+  text1_4.setText("ì´ìƒí˜");
   panel1.add(text1_4);
 
   /***************************************************************/
@@ -45,14 +45,14 @@ public class MyFrame3 extends JFrame {
   
   JLabel label2_1_1 = new JLabel(" ");
   panel2.add(label2_1_1);
-  JLabel label2_1_2 = new JLabel("±¹¾î ¼ºÀû ");
+  JLabel label2_1_2 = new JLabel("êµ­ì–´ ì„±ì  ");
   panel2.add(label2_1_2);
-  JLabel label2_1_3 = new JLabel("¿µ¾î ¼ºÀû");
+  JLabel label2_1_3 = new JLabel("ì˜ì–´ ì„±ì ");
   panel2.add(label2_1_3);
 
   ////////////////////////////////////////////////////////////
 
-  JLabel label2_2_1 = new JLabel("1-1ÇĞ±â");
+  JLabel label2_2_1 = new JLabel("1-1í•™ê¸°");
   panel2.add(label2_2_1);
   JTextField text2_2_2 = new JTextField(15);
   text2_2_2.setText("5");
@@ -63,7 +63,7 @@ public class MyFrame3 extends JFrame {
 
    ///////////////////////////////////////////////////////////
 
-  JLabel label2_3_1 = new JLabel("1-2ÇĞ±â");
+  JLabel label2_3_1 = new JLabel("1-2í•™ê¸°");
   panel2.add(label2_3_1);
   JTextField text2_3_2 = new JTextField(15);
   text2_3_2.setText("15");
@@ -74,7 +74,7 @@ public class MyFrame3 extends JFrame {
 
    ///////////////////////////////////////////////////////////
 
-  JLabel label2_4_1 = new JLabel("2-1ÇĞ±â");
+  JLabel label2_4_1 = new JLabel("2-1í•™ê¸°");
   panel2.add(label2_4_1);
   JTextField text2_4_2 = new JTextField(15);
   text2_4_2.setText("25");
@@ -87,9 +87,9 @@ public class MyFrame3 extends JFrame {
   /***************************************************************/
 
   panel1.setLayout(new FlowLayout(FlowLayout.CENTER));
-  JButton button1 = new JButton("È®ÀÎ");
+  JButton button1 = new JButton("í™•ì¸");
   panel3.add(button1,BorderLayout.CENTER);
-  JButton button2 = new JButton("Ãë¼Ò");
+  JButton button2 = new JButton("ì·¨ì†Œ");
   panel3.add(button2,BorderLayout.CENTER);
   
   

@@ -8,25 +8,25 @@ import java.net.Socket;
 
 public class WDB {
 	public static void main(String[] args) {
-		//¼­¹ö¸¦ »ı¼º
+		//ì„œë²„ë¥¼ ìƒì„±
 		String data;
 		try {
-			//1.¼­¹ö ¼ÒÄÏÀ» ¸¸µç´Ù.
+			//1.ì„œë²„ ì†Œì¼“ì„ ë§Œë“ ë‹¤.
 			ServerSocket serverSocket = new ServerSocket(5555);
-			System.out.println("¼­¹ö ¼ÒÄ¹ 5555 Æ÷Æ®·Î ´ë±âÁß");
+			System.out.println("ì„œë²„ ì†Œì¼“ 5555í¬íŠ¸ë¡œ ëŒ€ê¸°ì¤‘");
 			
-			//2.Å¬¶óÀÌ¾ğÆ®ÀÇ Á¢¼ÓÀ» ±â´Ù¸°´Ù.
-			//  Å¬¶óÀÌ¾ğÆ®°¡ Á¢¼ÓÇÏ¸é ¼ÒÄÏÀ» »ı¼ºÇÑ´Ù.
+			//2. í´ë¼ì´ì–¸íŠ¸ì˜ ì ‘ì†ì„ ê¸°ë‹¤ë¦°ë‹¤.
+			//  í´ë¼ì´ì–¸íŠ¸ê°€ ì ‘ì†í•˜ë©´ ì†Œì¼“ì„ ìƒì„±í•œë‹¤.
 			while(true) {
 				Socket socket = serverSocket.accept();
-				//3.»ı¼ºµÈ ¼ÒÄÏÀ¸·ÎºÎÅÍ Å¬¶óÀÌ¾ğÆ® º¸³»´Â ¸Ş½ÃÁö¸¦ ¹Ş´Â´Ù.
+				//3. ìƒì„±ëœ ì†Œì¼“ìœ¼ë¡œë¶€í„° í´ë¼ì´ì–¸íŠ¸ ë³´ë‚´ëŠ” ë©”ì‹œì§€ë¥¼ ë°›ëŠ”ë‹¤.
 				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-				//4.¹ŞÀº ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÏ°í , ¼ÒÄÏÀÇ Á¢¼ÓÀ» ²÷´Â´Ù.
+				//4.ë°›ì€ ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•˜ê³  , ì†Œì¼“ì˜ ì ‘ì†ì„ ëŠëŠ”ë‹¤.
 				while((data=in.readLine())!=null) {
 					System.out.println(data+socket.getInetAddress());
 				}
 				socket.close();
-				//5.°è¼Ó ´ë±âÇÑ´Ù.
+				//5.ê³„ì† ëŒ€ê¸°í•œë‹¤.
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

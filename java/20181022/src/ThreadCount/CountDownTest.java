@@ -10,7 +10,7 @@ public class CountDownTest extends JFrame{
 		@Override
 		public void run() {
 			for(int i=0; i<100; i++) {
-				//1000 -> 1ÃÊ
+				//1000 -> 1ì´ˆ
 				try {
 					Thread.sleep(1000);
 				}catch(Exception e) {
@@ -22,12 +22,12 @@ public class CountDownTest extends JFrame{
 	}
 	
 	public CountDownTest() {
-		setTitle("Ä«¿îÆ® ´Ù¿î");
+		setTitle("ì¹´ìš´íŠ¸ ë‹¤ìš´");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500,500);
 		
-		label = new JLabel("½ÃÀÛ");
-		Font font = new Font("¸¼Àº°íµñ",Font.BOLD,100);
+		label = new JLabel("ì‹œì‘");
+		Font font = new Font("ë§‘ì€ê³ ë”•",Font.BOLD,100);
 		label.setFont(font);
 		add(label);
 		

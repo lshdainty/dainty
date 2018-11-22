@@ -11,29 +11,29 @@ public class MyFrame extends JFrame{
 	private JButton buttonPink;
 	private JPanel panel;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public MyFrame() {
-		setSize(300,200);	//ÇÁ·¹ÀÎ Å©±â
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//xÇ¥½Ã ´©¸£¸é ²¨Áü(ÀÌ°ÍÀÌ ¾øÀ¸¸é Ã¢Àº ²¨µµ ÇÁ·Î±×·¥Àº °è¼Ó µ¹¾Æ°¡´ÂÁß)
-		setTitle("¾×¼Ç ÀÌº¥Æ® ¿¹Á¦");	//Å¸ÀÌÆ² ¸í
+		setSize(300,200);	//í”„ë ˆì¸ í¬ê¸°
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//xí‘œì‹œ ëˆ„ë¥´ë©´ êº¼ì§(ì´ê²ƒì´ ì—†ìœ¼ë©´ ì°½ì€ êº¼ë„ í”„ë¡œê·¸ë¨ì€ ê³„ì† ëŒì•„ê°€ëŠ”ì¤‘)
+		setTitle("ì•¡ì…˜ ì´ë²¤íŠ¸ ì˜ˆì œ");	//íƒ€ì´í‹€ ëª…
 		
-		//ÄÄÆ÷³ÍÆ® »ı¼º(¹öÆ° »ö»ó)
-		panel = new JPanel();	//ÆĞ³Î »ı¼º
-		buttonPink = new JButton("ÇÎÅ©»ö");	//¹öÆ° ÇÎÅ©
-		buttonYellow = new JButton("³ë¶õ»ö");	//¹öÆ° ¿¤·Î¿ì
+		//ì»´í¬ë„ŒíŠ¸ ìƒì„±(ë²„íŠ¼ ìƒ‰ìƒ)
+		panel = new JPanel();	//íŒ¨ë„ ìƒì„±
+		buttonPink = new JButton("í•‘í¬ìƒ‰");	//ë²„íŠ¼ í•‘í¬
+		buttonYellow = new JButton("ë…¸ë€ìƒ‰");	//ë²„íŠ¼ ì—˜ë¡œìš°
 		panel.add(buttonPink);
 		buttonPink.addActionListener(new MyListener1(panel));
 		panel.add(buttonYellow);
 		buttonYellow.addActionListener(new MyListener1(panel));
 		
-		//Å°º¸µå 
+		//í‚¤ë³´ë“œ 
 		panel.addKeyListener(new MyKeyListener(panel));
 		
 		
 		this.add(panel);
 		this.setVisible(true);
-		//Å°º¸µå
-		panel.setFocusable(true);	//ÀÌ ÄÄÆ÷³ÍÆ®°¡ event Æ÷Ä¿½º¸¦ ¹ŞÀ» ¼ö ÀÖµµ·Ï ¼³Á¤ ÇØÁÖ´Â°ÍÀÌ´Ù.
+		//í‚¤ë³´ë“œ
+		panel.setFocusable(true);	//ì´ ì»´í¬ë„ŒíŠ¸ê°€ event í¬ì»¤ìŠ¤ë¥¼ ë°›ì„ ìˆ˜ ìˆë„ë¡ ì„¤ì • í•´ì£¼ëŠ”ê²ƒì´ë‹¤.
 
 	}
 }

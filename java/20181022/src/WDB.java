@@ -4,51 +4,51 @@ import java.util.LinkedList;
 public class WDB {
 
 	public static void main(String[] args) {
-		//¸®½ºÆ® »ı¼º
+		//ë¦¬ìŠ¤íŠ¸ ìƒì„±
 		LinkedList<String> list = new LinkedList<String>();
 		
-		//¸®½ºÆ® Ãß°¡
-		list.add("¿ìÀ¯");
-		list.add("»§");
-		list.add("¹öÅÍ");
+		//ë¦¬ìŠ¤íŠ¸ ì¶”ê°€
+		list.add("ìš°ìœ ");
+		list.add("ë¹µ");
+		list.add("ë²„í„°");
 		
-		//¸®½ºÆ® Ãâ·Â
+		//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		for(int i =0; i<list.size(); i++) {
 			System.out.println(list.get(i));
 		}
 		
 	System.out.println("******************************");
 		
-		//¸®½ºÆ® ³»¿ë º¯°æ
-		list.set(1,"¼Òº¸·ç");
+		//ë¦¬ìŠ¤íŠ¸ ë‚´ìš© ë³€ê²½
+		list.set(1,"ì†Œë³´ë£¨");
 		
-		//º¯°æµÈ ³»¿ë¸£·Î Ãâ·Â
+		//ë³€ê²½ëœ ë‚´ìš©ë¥´ë¡œ ì¶œë ¥
 		for(int i =0; i<list.size(); i++) {
 			System.out.println(list.get(i));
 		}
 		
 	System.out.println("******************************");
 		
-		/*map¾È¿¡ hashmapÀÌ¶õ°Ô ÀÖ´Ù.
-		 * Integer´Â Å°°ª¿¡ ´ëÇÑ Å¸ÀÔ , StringÀº °ª¿¡ ´ëÇÑ Å¸ÀÔ
-		 * ¹è¿­°ú ºñ½ÁÇÏÁö¸¸ ÀÎµ¦½º¸¦ integer·Î ÇÒ ¼öµµ ÀÖ°í StringÀ¸·Î ÇÒ ¼öµµ ÀÖ´Ù.
+		/*mapì•ˆì— hashmapì´ë€ê²Œ ìˆë‹¤.
+		 * IntegerëŠ” í‚¤ê°’ì— ëŒ€í•œ íƒ€ì… , Stringì€ ê°’ì— ëŒ€í•œ íƒ€ì…
+		 * ë°°ì—´ê³¼ ë¹„ìŠ·í•˜ì§€ë§Œ ì¸ë±ìŠ¤ë¥¼ integerë¡œ í•  ìˆ˜ë„ ìˆê³  Stringìœ¼ë¡œ í•  ìˆ˜ë„ ìˆë‹¤.
 		 */
 		HashMap<Integer,String> st = new HashMap<Integer,String>();
-		st.put(1, "È«±æµ¿");
-		st.put(2, "¼ºÃáÇâ");
+		st.put(1, "í™ê¸¸ë™");
+		st.put(2, "ì„±ì¶˜í–¥");
 		
-		//°ª Ãâ·Â
+		//ê°’ ì¶œë ¥
 		String a = st.get(1);
 		System.out.println(a);
 		
 	System.out.println("******************************");
 		
 		HashMap<String,String> st1 = new HashMap<String,String>();
-		st1.put("È«±æµ¿Àü", "È«±æµ¿");
-		st1.put("ÃáÇâÀü", "¼ºÃáÇâ");
+		st1.put("í™ê¸¸ë™ì „", "í™ê¸¸ë™");
+		st1.put("ì¶˜í–¥ì „", "ì„±ì¶˜í–¥");
 		
-		//°ª Ãâ·Â
-		String a1 = st1.get("ÃáÇâÀü");
+		//ê°’ ì¶œë ¥
+		String a1 = st1.get("ì¶˜í–¥ì „");
 		System.out.println(a1);
 	}
 

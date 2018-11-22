@@ -5,8 +5,8 @@ import java.util.Date;
 
 class BinaryFile{
 	public void write() {
-		//¹ÙÀÌ³Ê¸® ÆÄÀÏÀ» »ı¼ºÇÏ¿© µ¥ÀÌÅÍ¸¦ ÀúÀå
-		//±âÃÊ ÀÚ·áÇü ´ÜÀ§·Î µ¥ÀÌÅÍ ÀúÀåÇÏ±â À§ÇÑ Å¬·¡½º
+		//ë°”ì´ë„ˆë¦¬ íŒŒì¼ì„ ìƒì„±í•˜ì—¬ ë°ì´í„°ë¥¼ ì €ì¥
+		//ê¸°ì´ˆ ìë£Œí˜• ë‹¨ìœ„ë¡œ ë°ì´í„° ì €ì¥í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 		
 		DataOutputStream dos = null;
 		FileOutputStream fos;
@@ -15,14 +15,14 @@ class BinaryFile{
 			BufferedOutputStream bos = new BufferedOutputStream(fos);
 			dos = new DataOutputStream(bos);
 			
-			//ÆÄÀÏ¿¡ Á¤¼ö°ªÀ» ÀúÀå
+			//íŒŒì¼ì— ì •ìˆ˜ê°’ì„ ì €ì¥
 			dos.writeInt(100);
-			//ÆÄÀÏ¿¡ ½Ç¼ö°ªÀ» ÀúÀå
+			//íŒŒì¼ì— ì‹¤ìˆ˜ê°’ì„ ì €ì¥
 			dos.writeDouble(3.141592);
-			//¹®ÀÚ¿­À» ÀúÀå
-			dos.writeUTF("È«±æµ¿");
+			//ë¬¸ìì—´ì„ ì €ì¥
+			dos.writeUTF("í™ê¸¸ë™");
 			
-			//½ÇÁ¦ ÆÄÀÏ¿¡ ¿ÏÀüÈ÷ Àû¾îÁÖ±â À§ÇÑ ¸Ş¼Òµå
+			//ì‹¤ì œ íŒŒì¼ì— ì™„ì „íˆ ì ì–´ì£¼ê¸° ìœ„í•œ ë©”ì†Œë“œ
 			dos.flush();
 			
 			dos.close();
@@ -33,8 +33,8 @@ class BinaryFile{
 	}
 	
 	public void read() {
-		//¹ÙÀÌ³Ê¸® ÆÄÀÏÀ» ÀĞ¾î¼­ È­¸é¿¡ Ãâ·Â
-		//±âÃÊ ÀÚ·áÇü ´ÜÀ§·Î µ¥ÀÌÅÍ ÀĞ±âÇÏ±â À§ÇÑ Å¬·¡½º
+		//ë°”ì´ë„ˆë¦¬ íŒŒì¼ì„ ì½ì–´ì„œ í™”ë©´ì— ì¶œë ¥
+		//ê¸°ì´ˆ ìë£Œí˜• ë‹¨ìœ„ë¡œ ë°ì´í„° ì½ê¸°í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 		
 		DataInputStream dis = null;
 		FileInputStream fis;
@@ -43,14 +43,14 @@ class BinaryFile{
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			dis = new DataInputStream(bis);
 			
-			//ÆÄÀÏ¿¡ Á¤¼ö°ªÀ» ÀĞ¾î¿Â´Ù.
+			//íŒŒì¼ì— ì •ìˆ˜ê°’ì„ ì½ì–´ì˜¨ë‹¤.
 			int a = dis.readInt();
-			//ÆÄÀÏ¿¡ ½Ç¼ö°ªÀ» ÀĞ¾î¿Â´Ù.
+			//íŒŒì¼ì— ì‹¤ìˆ˜ê°’ì„ ì½ì–´ì˜¨ë‹¤.
 			double b = dis.readDouble();
-			//¹®ÀÚ¿­À» ÀĞ¾î¿Â´Ù.
+			//ë¬¸ìì—´ì„ ì½ì–´ì˜¨ë‹¤.
 			String c = dis.readUTF();
 			
-			System.out.format("Á¤¼ö°ª : %d ½Ç¼ö°ª : %f ¹®ÀÚ¿­ %s", a,b,c);
+			System.out.format("ì •ìˆ˜ê°’ : %d ì‹¤ìˆ˜ê°’ : %f ë¬¸ìì—´ : %s", a,b,c);
 			
 			dis.close();
 			
@@ -71,7 +71,7 @@ class BinaryFile{
 			oos.flush();
 			oos.close();
 			
-			//10ÃÊ ÈÄ¿¡
+			//10ì´ˆ í›„ì—
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {

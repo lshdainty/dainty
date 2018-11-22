@@ -13,17 +13,17 @@ public class MyListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton button1 = (JButton)e.getSource();
 		//if(count%2==0) {
-		//	button1.setText("¹öÆ° ´©¸§");
+		//	button1.setText("ë²„íŠ¼ ëˆ„ë¦„");
 		//	count++;
 		//}
 		//else {
-		//	button1.setText("¹öÆ°À» ´­·¯ÁÖ¼¼¿ä");
+		//	button1.setText("ë²„íŠ¼ì„ ëˆŒëŸ¬ì£¼ì„¸ìš”");
 		//	count++;
 		//}
-		if(button1.getText().equals("¹öÆ° ´©¸§"))
-			button1.setText("¹öÆ°À» ´©¸£¼¼¿ä");
+		if(button1.getText().equals("ë²„íŠ¼ ëˆ„ë¦„"))
+			button1.setText("ë²„íŠ¼ì„ ëˆ„ë¥´ì„¸ìš”");
 		else
-			button1.setText("¹öÆ° ´©¸§");
+			button1.setText("ë²„íŠ¼ ëˆ„ë¦„");
 		
 	}
 

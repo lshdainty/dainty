@@ -9,18 +9,18 @@ public class myPanel extends JPanel{
 	int x = 0;
 	int y = 0;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public myPanel() {
 		try {
 			img = ImageIO.read(new File("C:\\Users\\bon320-15\\Desktop\\1.png"));
 		}catch(Exception e) {
-			System.out.println("ÀÌ¹ÌÁö¸¦ Ã£À»¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ì´ë¯¸ì§€ë¥¼ ì°¾ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			System.exit(1);
 		}
-		//¸®½ºÅÍ µî·Ï
+		//ë¦¬ìŠ¤í„° ë“±ë¡
 		this.addKeyListener(new MyKeyListener(this));
-		this.setFocusable(true);	// Æ÷Ä¿½º ¹ŞÀ» ¼ö ÀÖ°Ô ÇØÁÜ
-		this.requestFocus();	//Æ÷Ä¿½º ¿äÃ»
+		this.setFocusable(true);	// í¬ì»¤ìŠ¤ ë°›ì„ ìˆ˜ ìˆê²Œ í•´ì¤Œ
+		this.requestFocus();	//í¬ì»¤ìŠ¤ ìš”ì²­
 	}
 	
 	@Override

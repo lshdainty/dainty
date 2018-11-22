@@ -12,22 +12,22 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-//1.¸®½º³Ê ÀÎÅÍÆäÀÌ½º »ó¼Ó
-//2.¹öÆ°¿¡ ¸®½º³Ê µî·Ï\
-//3.¸®½º³Ê ÀÌº¥Æ® Ã³¸® ¸Ş¼Òµå ±¸Çö 
+//1.ë¦¬ìŠ¤ë„ˆ ì¸í„°í˜ì´ìŠ¤ ìƒì†
+//2.ë²„íŠ¼ì— ë¦¬ìŠ¤ë„ˆ ë“±ë¡\
+//3.ë¦¬ìŠ¤ë„ˆ ì´ë²¤íŠ¸ ì²˜ë¦¬ ë©”ì†Œë“œ êµ¬í˜„ 
 
-public class MyPanel extends JPanel implements ActionListener{	//1¹ø ÀÎÅÍÆäÀÌ½º »ó¼Ó
+public class MyPanel extends JPanel implements ActionListener{	//1ë²ˆ ì¸í„°í˜ì´ìŠ¤ ìƒì†
 	private JButton button;
 	private Color color = new Color(0,0,0);
 	BufferedImage img = null;
 	
 	MyPanel(){
 		setLayout(new BorderLayout());
-		button = new JButton("»ö»ó º¯°æ");
-		button.addActionListener(this);	//2¹ø ¹öÆ°¿¡ ¸®½º³Ê µî·Ï
+		button = new JButton("ìƒ‰ìƒ ë³€ê²½");
+		button.addActionListener(this);	//2ë²ˆ ë²„íŠ¼ì— ë¦¬ìŠ¤ë„ˆ ë“±ë¡
 		add(button, BorderLayout.SOUTH);
 		try {
-			img = ImageIO.read(new File("C:\\Users\\bon320-15\\Desktop\\ÀÌ¹ÌÁö.jpg"));
+			img = ImageIO.read(new File("C:\\Users\\bon320-15\\Desktop\\ì´ë¯¸ì§€.jpg"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,25 +49,25 @@ public class MyPanel extends JPanel implements ActionListener{	//1¹ø ÀÎÅÍÆäÀÌ½º 
 		Font f2 = new Font("San Serif",Font.BOLD,20);
 		g.setFont(f2);
 		g.drawString("San Serif 20 BOLD", 20, 80);
-		Font f3 = new Font("±¼¸²Ã¼",Font.ITALIC,20);
+		Font f3 = new Font("êµ´ë¦¼ì²´",Font.ITALIC,20);
 		g.setFont(f3);
-		g.drawString("±¼¸²Ã¼ 20 ITALIC", 20, 100);
-		Font f4 = new Font("±Ã¼­Ã¼",Font.PLAIN,20);
+		g.drawString("êµ´ë¦¼ì²´ 20 ITALIC", 20, 100);
+		Font f4 = new Font("ê¶ì„œì²´",Font.PLAIN,20);
 		g.setFont(f4);
-		g.drawString("±Ã¼­Ã¼ 20 PLAIN", 20, 120);
-		Font f5 = new Font("¸¼Àº°íµñ",Font.BOLD,20);
+		g.drawString("ê¶ì„œì²´ 20 PLAIN", 20, 120);
+		Font f5 = new Font("ë§‘ì€ê³ ë”•",Font.BOLD,20);
 		g.setFont(f5);
-		g.drawString("¸¼Àº°íµñ 20 BOLD", 20, 140);
+		g.drawString("ë§‘ì€ê³ ë”• 20 BOLD", 20, 140);
 		
 		g.drawImage(img,0,0,null);
 	}
 
 
 
-	@Override	//3¹ø ¸®½º³Ê ÀÌº¥Æ® Ã³¸® ¸Ş¼Òµå ±¸Çö
+	@Override	//3ë²ˆ ë¦¬ìŠ¤ë„ˆ ì´ë²¤íŠ¸ ì²˜ë¦¬ ë©”ì†Œë“œ êµ¬í˜„
 	public void actionPerformed(ActionEvent e) {
 		color = new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-		System.out.println("¸®½º³Ê ÀÌº¥Æ® Ã³¸® ¸Ş¼Òµå È£Ãâ");
+		System.out.println("ë¦¬ìŠ¤ë„ˆ ì´ë²¤íŠ¸ ì²˜ë¦¬ ë©”ì†Œë“œ í˜¸ì¶œ");
 		repaint();
 	}
 }

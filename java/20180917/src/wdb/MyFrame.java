@@ -11,20 +11,20 @@ class MyFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Title Test");
   
-		// ÇÁ·¹ÀÓÀÇ ¾ÆÀÌÄÜÀ» º¯°æ
+		// í”„ë ˆì„ì˜ ì•„ì´ì½˜ì„ ë³€ê²½
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Image img = kit.getImage("toad.png");
 		setIconImage(img);
   
-		// ÄÁÅ×ÀÌ³Ê¿¡ ¹èÄ¡ °ü¸®ÀÚ¸¦ ¼³Á¤
+		// ì»¨í…Œì´ë„ˆì— ë°°ì¹˜ ê´€ë¦¬ìë¥¼ ì„¤ì •
 		this.setLayout(new FlowLayout());
   
-		// ÄÁÅ×ÀÌ³Ê¿¡ ÄÄÆ÷³ÍÆ®¸¦ Ãß°¡ÇÏ´Â ÄÚµå »ğÀÔ
-		// 1. ¹öÆ° ÄÄÆ÷³ÍÆ®¸¦ »ı¼º
-		JButton button1 = new JButton("¹öÆ°");
-		JButton button2 = new JButton("¹öÆ°");
+		// ì»¨í…Œì´ë„ˆì— ì»´í¬ë„ŒíŠ¸ë¥¼ ì¶”ê°€í•˜ëŠ” ì½”ë“œ ì‚½ì…
+		// 1. ë²„íŠ¼ ì»´í¬ë„ŒíŠ¸ë¥¼ ìƒì„±
+		JButton button1 = new JButton("ë²„íŠ¼");
+		JButton button2 = new JButton("ë²„íŠ¼");
   
-		// 2. »ı¼ºµÈ ¹öÆ° ÄÄÆ÷³ÍÆ®¸¦ ÄÁÅ×ÀÌ³Ê¿¡ Ãß°¡
+		// 2. ìƒì„±ëœ ë²„íŠ¼ ì»´í¬ë„ŒíŠ¸ë¥¼ ì»¨í…Œì´ë„ˆì— ì¶”ê°€
 		this.add(button1);
 		this.add(button2);
   

@@ -20,17 +20,17 @@ class MyScanner{
 		Scanner scan = null;
 		
 		try {
-			//¹®ÀÚ´ÜÀ§ ÀÔ·Â Å¬·¡½º
+			//ë¬¸ìë‹¨ìœ„ ì…ë ¥ í´ë˜ìŠ¤
 			FileReader rf = new FileReader("D:\\input.txt");
-			//¹öÆÛ¸¦ ÀÌ¿ëÇÑ Å¬·¡½º
+			//ë²„í¼ë¥¼ ì´ìš©í•œ í´ë˜ìŠ¤
 			BufferedReader br = new BufferedReader(rf);
-			//Scanner °´Ã¼ »ı¼º
+			//Scanner ê°ì²´ ìƒì„±
 			scan = new Scanner(br);
 			int total = 0;
 			int numInt = 0;
 			String s = null;
 			
-			//ÀĞ¾î¿À¸é¼­ Åä±Ù ´ÜÀ§·Î ÃßÃâÇÑ´Ù.
+			//ì½ì–´ì˜¤ë©´ì„œ í† í° ë‹¨ìœ„ë¡œ ì¶”ì¶œí•œë‹¤.
 			while(scan.hasNext()) {
 				if(scan.hasNextInt()) {
 					s = scan.next();
@@ -41,7 +41,7 @@ class MyScanner{
 					System.out.println(scan.next());
 				}
 				
-				//System.out.println(scan.next());	//next´Â °ø¹é´ÜÀ§·Î °¡Á®¿À°í nextLineÀº ÁÙ´ÜÀ§·Î °¡Á®¿Â´Ù.
+				//System.out.println(scan.next());	//nextëŠ” ê³µë°±ë‹¨ìœ„ë¡œ ê°€ì ¸ì˜¤ê³  nextLineì€ ì¤„ ë‹¨ìœ„ë¡œ ê°€ì ¸ì˜¨ë‹¤.
 			}
 			if(scan != null) {
 				scan.close();

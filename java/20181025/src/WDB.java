@@ -11,7 +11,7 @@ public class WDB {
 
 class Buffer{
 	private int data;
-	private boolean empty = true;	//»óÅÂÁ¤º¸
+	private boolean empty = true;	//ìƒíƒœì •ë³´
 	
 	public synchronized int get() {
 		while(empty) {
@@ -50,7 +50,7 @@ class Producer implements Runnable{
 	public void run() {
 		for(int i=0; i<10; i++) {
 			buffer.put(i);
-			System.out.println("»ı»êÀÚ : " + i + "¹ø ÄÉÀÍÀ» »ı»êÇÏ¿´½À´Ï´Ù.");
+			System.out.println("ìƒì‚°ì : " + i + "ë²ˆ ì¼€ìµì„ ìƒì‚°í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			try{
 				Thread.sleep((int)(Math.random()*100));
 			}catch(Exception e) {
@@ -70,7 +70,7 @@ class Consumer implements Runnable{
 	public void run() {
 		for(int i=0; i<10; i++) {
 			int data = buffer.get();
-			System.out.println("¼ÒºñÀÚ : " + data + "¹ø ÄÉÀÍÀ» ¼ÒºñÇÏ¿´½À´Ï´Ù.");
+			System.out.println("ì†Œë¹„ì : " + data + "ë²ˆ ì¼€ìµì„ ì†Œë¹„í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			try {
 				Thread.sleep((int)(Math.random()*100));
 			}catch(Exception e) {

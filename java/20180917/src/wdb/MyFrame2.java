@@ -14,28 +14,28 @@ public class MyFrame2 extends JFrame {
 	public MyFrame2() {
 		setSize(500,300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("»´±Êµø");
+		setTitle("ÌôçÍ∏∏Îèô");
 		
 		JPanel panel = new JPanel();
 		//panel.setLayout(new FlowLayout(FlowLayout.LEADING));
 		//panel.setLayout(new BorderLayout());
 		panel.setLayout(new GridLayout(5,2));
 		for(int i=0; i<10; i++) {
-			String name = "πˆ∆∞" + i;
+			String name = "Î≤ÑÌäº" + i;
 			panel.add(new JButton(name));
 		}
 		
 		
-		//JLabel label = new JLabel("æ»≥Á«œººø‰");
+		//JLabel label = new JLabel("ÏïàÎÖïÌïòÏÑ∏Ïöî");
 		//panel.add(label,BorderLayout.SOUTH);
 		
-		//JButton button1 = new JButton("πˆ∆∞1");
+		//JButton button1 = new JButton("Î≤ÑÌäº1");
 		//panel.add(button1,BorderLayout.NORTH);
 		
-		//JButton button2 = new JButton("πˆ∆∞2");
+		//JButton button2 = new JButton("Î≤ÑÌäº2");
 		//panel.add(button2,BorderLayout.EAST);
 		
-		//JButton button3 = new JButton("πˆ∆∞3");
+		//JButton button3 = new JButton("Î≤ÑÌäº3");
 		//panel.add(button3,BorderLayout.CENTER);
 		
 		this.add(panel);

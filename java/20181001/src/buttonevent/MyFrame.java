@@ -10,12 +10,12 @@ public class MyFrame extends JFrame {
 	
 	private JButton button;
 	
-	MyFrame(){	//»ı¼ºÀÚ
+	MyFrame(){	//ìƒì„±ì
 		this.setSize(300,200);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("¹öÆ° ÀÌº¥Æ® ¿¹Á¦");
+		this.setTitle("ë²„íŠ¼ ì´ë²¤íŠ¸ ì˜ˆì œ");
 		this.setLayout(new FlowLayout());
-		button = new JButton("¹öÆ°À» ´©¸£½Ã¿À");
+		button = new JButton("ë²„íŠ¼ì„ ëˆ„ë¥´ì‹œì˜¤");
 		
 		button.addActionListener(new MyListener());
 		

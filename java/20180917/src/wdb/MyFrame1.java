@@ -10,17 +10,17 @@ public class MyFrame1 extends JFrame{
 	public MyFrame1() {
 		setSize(500,300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("È«±æµ¿");
+		setTitle("í™ê¸¸ë™");
 		
 		JPanel panel = new JPanel();
-		JLabel label = new JLabel("¾È³çÇÏ¼¼¿ä");
-		JButton button1 = new JButton("¹öÆ°1");
-		JButton button2 = new JButton("¹öÆ°2");
-		JButton button3 = new JButton("¹öÆ°3");
+		JLabel label = new JLabel("ì•ˆë…•í•˜ì„¸ìš”");
+		JButton button1 = new JButton("ë²„íŠ¼1");
+		JButton button2 = new JButton("ë²„íŠ¼2");
+		JButton button3 = new JButton("ë²„íŠ¼3");
 		JTextField textField1 = new JTextField(10);
 		JTextField textField2 = new JTextField(10);
-		textField1.setText("ÆíÁı°¡´É");
-		textField2.setText("ÆíÁıºÒ°¡´É");
+		textField1.setText("í¸ì§‘ê°€ëŠ¥");
+		textField2.setText("í¸ì§‘ë¶ˆê°€ëŠ¥");
 		textField2.setEditable(false);
 		
 		panel.add(label);

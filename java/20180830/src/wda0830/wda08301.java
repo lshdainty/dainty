@@ -5,29 +5,29 @@ import java.sql.SQLException;
 
 public class wda08301 {
 	public static void main(String[] args) {
-		//1. jdbcµå¶óÀÌ¹ö ÀûÀç
+		//1. jdbcë“œë¼ì´ë²„ ì ì¬
 		
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("µå¶óÀÌ¹ö ÀûÀç ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ì ì¬ ì„±ê³µ");
 		}catch(ClassNotFoundException e) {
-			//e.printStackTrace(); ½Ã»¹°ÇÁÙ ³ªÅ¸³²
-			System.out.println("µå¶óÀÌ¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù,");
+			//e.printStackTrace(); ì‹œë»˜ê±´ì¤„ ë‚˜íƒ€ë‚¨
+			System.out.println("ë“œë¼ì´ë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤,");
 		}
 		
-		//2. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+		//2. ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
 		String url = "jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";
 		String id = "s1501205";
 		String pw = "p1501205";
 		try{
 			DriverManager.getConnection(url, id, pw);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		}catch(SQLException e) {
-			//e.printStackTrace(); ½Ã»¹°ÇÁÙ ³ªÅ¸³²
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+			//e.printStackTrace(); ì‹œë»˜ê±´ì¤„ ë‚˜íƒ€ë‚¨
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
-		//3. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á Á¾·á
+		//3. ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì¢…ë£Œ
 	}
 }

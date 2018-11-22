@@ -8,29 +8,29 @@ public class MyDb {
 	ResultSet rs;
 	
 	public void connectDB() {
-		//1. JDBC µå¶óÀÌ¹ö ¿¹Á¦
+		//1. JDBC ë“œë¼ì´ë²„ ì˜ˆì œ
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");	//ÀÌÅ¬¸³½º¿¡ ¿À¶óÅ¬ jdbc ÀûÀç
-			System.out.println("µå¶óÀÌ¹ö ÀûÀç ¼º°ø.");
-		} catch (ClassNotFoundException e) {	//½ÇÆĞÇÏ¸é ½ÇÆĞÇÑ ÀÌÀ¯¸¦ ³ªÅ¸³»ÁÜ
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
-			System.out.println("µå¶óÀÌ¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			Class.forName("oracle.jdbc.driver.OracleDriver");	//ì´í´ë¦½ìŠ¤ì— ì˜¤ë¼í´ jdbc ì ì¬
+			System.out.println("ë“œë¼ì´ë²„ ì ì¬ ì„±ê³µ.");
+		} catch (ClassNotFoundException e) {	//ì‹¤íŒ¨í•˜ë©´ ì‹¤íŒ¨í•œ ì´ìœ ë¥¼ ë‚˜íƒ€ë‚´ì¤Œ
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
+			System.out.println("ë“œë¼ì´ë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			return ;
 		}
 		
 		
-		// 2. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
-		String url ="jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";	//¿¬°áÇÒ db¿¡ ´ëÇÑ ¸µÅ©¿Í À¯ÀúÁ¤º¸¸¦ º¯¼ö¿¡ ÀúÀå
+		// 2. ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
+		String url ="jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";	//ì—°ê²°í•  dbì— ëŒ€í•œ ë§í¬ì™€ ìœ ì €ì •ë³´ë¥¼ ë³€ìˆ˜ì— ì €ì¥
 		String id = "s1501205";
 		String pw = "p1501205";
 		try {
-			this.conn = DriverManager.getConnection(url, id, pw);	//¿¬°áÀ» À§ÇÑ º¯¼ö¿¡ Á¤º¸ÀúÀå
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø.");
-		} catch (SQLException e) {	//½ÇÆĞ½Ã ½ÇÆĞÁ¤º¸¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞ
+			this.conn = DriverManager.getConnection(url, id, pw);	//ì—°ê²°ì„ ìœ„í•œ ë³€ìˆ˜ì— ì •ë³´ì €ì¥
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ.");
+		} catch (SQLException e) {	//ì‹¤íŒ¨ì‹œ ì‹¤íŒ¨ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„
 			// TODO Auto-generated catch block
-			//e.printStackTrace();  ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
-			System.out.println("µ¥ÀÌÅÍ º£ÀÌ½º ¿¬°á¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù..");
+			//e.printStackTrace();  ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
+			System.out.println("ë°ì´í„° ë² ì´ìŠ¤ ì—°ê²°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤..");
 			return ;
 		}
 	}
@@ -38,43 +38,43 @@ public class MyDb {
 	/*************************************************************************/
 	
 	public void insertmember() {
-		//Áı¾î³ÖÀ» µ¥ÀÌÅÍ : powerjava 'yjc' 2018' 20000
+		//ì§‘ì–´ë„£ì„ ë°ì´í„° : powerjava 'yjc' 2018' 20000
 		
-		//statement °´Ã¼¸¦ »ı¼º
+		//statement ê°ì²´ë¥¼ ìƒì„±
 		
 		try {
-			this.stmt = this.conn.createStatement();	//Á¢¼ÓÇÑ db¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÏ°í º¯¼ö¿¡ ÀúÀåÇÑ´Ù.
-		} catch (SQLException e) {	//°´Ã¼ »ı¼º ½ÇÆĞ½Ã ½ÇÆĞ¿øÀÎÀ» ³ªÅ¸³»ÁÖ´Â ºÎºĞ
-			System.out.println("Statement°´Ã¼ »ı¼º¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù");
+			this.stmt = this.conn.createStatement();	//ì ‘ì†í•œ dbì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë³€ìˆ˜ì— ì €ì¥í•œë‹¤.
+		} catch (SQLException e) {	//ê°ì²´ ìƒì„± ì‹¤íŒ¨ì‹œ ì‹¤íŒ¨ì›ì¸ì„ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„
+			System.out.println("Statementê°ì²´ ìƒì„±ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤");
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
  		}
 		
-		//sql¹®ÀåÀ» ÀÛ¼º
+		//sqlë¬¸ì¥ì„ ì‘ì„±
 		
 		String sql = "insert into books values(7,'sql', 'kuj','2013',17000)";
-		System.out.println(sql); //È®ÀÎ¿ë
+		System.out.println(sql); //í™•ì¸ìš©
 		
-		//db¿¡ ½ÇÇà
+		//dbì— ì‹¤í–‰
 		
 		try {
-			int n = stmt.executeUpdate(sql);	//insert³ª delete´Â executeUpdate»ç¿ë
-			System.out.println("°á°ú¿¡ ¹İ¿µµÈ ÇàÀÇ ¼ö´Â : " + n);
-			conn.close();	//¿¬°á Á¾·á
+			int n = stmt.executeUpdate(sql);	//insertë‚˜ deleteëŠ” executeUpdateì‚¬ìš©
+			System.out.println("ê²°ê³¼ì— ë°˜ì˜ëœ í–‰ì˜ ìˆ˜ëŠ” : " + n);
+			conn.close();	//ì—°ê²° ì¢…ë£Œ
 		} catch (SQLException e) {
-			System.out.println("sql½ÇÇà¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.");
+			System.out.println("sqlì‹¤í–‰ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.");
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
 		}
 	}
 	
 	/*************************************************************************/
 	
-	public void select() {	//°Ë»öÀ» ÇÏ±â À§ÇÑ ºÎºĞ
+	public void select() {	//ê²€ìƒ‰ì„ í•˜ê¸° ìœ„í•œ ë¶€ë¶„
 		try {
-			this.stmt = this.conn.createStatement();	//ÇöÀç Á¢¼ÓÇÑ db¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇØ¼­ º¯¼ö¿¡ ÀúÀå
+			this.stmt = this.conn.createStatement();	//í˜„ì¬ ì ‘ì†í•œ dbì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•´ì„œ ë³€ìˆ˜ì— ì €ì¥
 		} catch (SQLException e){
-			System.out.println("Statement°´Ã¼ »ı¼º¿¡ ¹®Á¦°¡ ÀÖ³×¿ä");
+			System.out.println("Statementê°ì²´ ìƒì„±ì— ë¬¸ì œê°€ ìˆë„¤ìš”");
 		}
 		
 		String sql = "select * from books";
@@ -87,7 +87,7 @@ public class MyDb {
 				System.out.println(title);
 			}
 		} catch (SQLException e) {
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
 		}
 	}
 	
@@ -95,31 +95,31 @@ public class MyDb {
 	
 	public void allRetrieve() {
 		
-		//1 statement°´Ã¼ »ı¼º
+		//1 statementê°ì²´ ìƒì„±
 		try {
 			this.stmt = this.conn.createStatement();
-			System.out.println("Statement °´Ã¼»ı¼º ¼º°ø");
+			System.out.println("Statement ê°ì²´ìƒì„± ì„±ê³µ");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
-			System.out.println("Statement°´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
+			System.out.println("Statementê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
 		
-		//2 sqlÀÛ¼º
+		//2 sqlì‘ì„±
 		String sql ="select * from books";
 		//String sql ="select book_id,rpad(title,25,' '),rpad(publisher,13,' '),year,price from books order by title";
-		//Á¤·Ä ÇÏ´Â ¹æ¹ı1 sqlÀÚÃ¼¸¦ Á¤·ÄÇØ¼­ ¶§·Á¹Ú±â 
+		//ì •ë ¬ í•˜ëŠ” ë°©ë²•1 sqlìì²´ë¥¼ ì •ë ¬í•´ì„œ ë•Œë ¤ë°•ê¸° 
 		
-		//3  ÁúÀÇ »ı¼º ¹× °á°ú ¹İÇÑ
+		//3  ì§ˆì˜ ìƒì„± ë° ê²°ê³¼ ë°˜í•œ
 		try {
 			this.rs = this.stmt.executeQuery(sql);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
-			System.out.println("Äõ¸®½ÇÇàÁß ¹®Á¦ ¹ß»ı");
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
+			System.out.println("ì¿¼ë¦¬ì‹¤í–‰ì¤‘ ë¬¸ì œ ë°œìƒ");
 		}
 		
-		//4  °á°ú¸¦ ¿øÇÏ´Â ÇüÅÂ·Î Ãâ·Â
+		//4  ê²°ê³¼ë¥¼ ì›í•˜ëŠ” í˜•íƒœë¡œ ì¶œë ¥
 		try{
 			
 			//String bookname = rs.getString("title");
@@ -132,10 +132,10 @@ public class MyDb {
 				
 				//System.out.println(bookID + "||" + bookname + "||" + pub + "||" + year + "||" + price);
 				System.out.printf("%2d|%-26s|%-14s|%4s|%5d|\n", bookID,bookname,pub,year,price);
-				//ÀÚ¸®¼ö ÁöÁ¤ÇØÁÖ±â
+				//ìë¦¬ìˆ˜ ì§€ì •í•´ì£¼ê¸°
 			}
 		}catch(SQLException e) {
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
 		}
 	}
 
@@ -144,28 +144,28 @@ public class MyDb {
 	public void deleteBookID(int bookID) {
 		// TODO Auto-generated method stub
 		try {
-			this.stmt = this.conn.createStatement();	//Á¢¼ÓÇÑ db¿¡ ´ëÇÑ °´Ã¼¸¦ »ı¼ºÇÏ°í º¯¼ö¿¡ ÀúÀåÇÑ´Ù.
-		} catch (SQLException e) {	//°´Ã¼ »ı¼º ½ÇÆĞ½Ã ½ÇÆĞ¿øÀÎÀ» ³ªÅ¸³»ÁÖ´Â ºÎºĞ
-			System.out.println("Statement°´Ã¼ »ı¼º¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù");
+			this.stmt = this.conn.createStatement();	//ì ‘ì†í•œ dbì— ëŒ€í•œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë³€ìˆ˜ì— ì €ì¥í•œë‹¤.
+		} catch (SQLException e) {	//ê°ì²´ ìƒì„± ì‹¤íŒ¨ì‹œ ì‹¤íŒ¨ì›ì¸ì„ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„
+			System.out.println("Statementê°ì²´ ìƒì„±ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤");
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
  		}
 		
-		//sql¹®ÀåÀ» ÀÛ¼º
+		//sqlë¬¸ì¥ì„ ì‘ì„±
 		
 		String sql = "delete from books where book_id =" + bookID;
-		System.out.println(sql); //È®ÀÎ¿ë
+		System.out.println(sql); //í™•ì¸ìš©
 		
-		//db¿¡ ½ÇÇà
+		//dbì— ì‹¤í–‰
 		
 		try {
-			int n = stmt.executeUpdate(sql);	//insert³ª delete´Â executeUpdate»ç¿ë
-			System.out.println("°á°ú¿¡ ¹İ¿µµÈ ÇàÀÇ ¼ö´Â : " + n);
-			//conn.close();	//¿¬°á Á¾·á
+			int n = stmt.executeUpdate(sql);	//insertë‚˜ deleteëŠ” executeUpdateì‚¬ìš©
+			System.out.println("ê²°ê³¼ì— ë°˜ì˜ëœ í–‰ì˜ ìˆ˜ëŠ” : " + n);
+			//conn.close();	//ì—°ê²° ì¢…ë£Œ
 		} catch (SQLException e) {
-			System.out.println("sql½ÇÇà¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.");
+			System.out.println("sqlì‹¤í–‰ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.");
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
 		}
 	}
 	
@@ -174,7 +174,7 @@ public class MyDb {
 	public void insert(int id, String name , String pub, String year , int price) {
 		PreparedStatement pstmt = null;
 		
-		//sql¹®ÀåÀ» ÀÛ¼º
+		//sqlë¬¸ì¥ì„ ì‘ì„±
 		
 		String sql = "insert into books values(?,?,?,?,?)";
 		
@@ -186,19 +186,19 @@ public class MyDb {
 			pstmt.setString(4,year);
 			pstmt.setInt(5,price);
 		}catch(SQLException e) {
-			System.out.println("Statement »ı¼º¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.");
+			System.out.println("Statement ìƒì„±ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.");
 		}
 		
-		//db¿¡ ½ÇÇà
+		//dbì— ì‹¤í–‰
 		
 		try {
-			int n = pstmt.executeUpdate();	//insert³ª delete´Â executeUpdate»ç¿ë
-			System.out.println("°á°ú¿¡ ¹İ¿µµÈ ÇàÀÇ ¼ö´Â : " + n);
-			//conn.close();	//¿¬°á Á¾·á
+			int n = pstmt.executeUpdate();	//insertë‚˜ deleteëŠ” executeUpdateì‚¬ìš©
+			System.out.println("ê²°ê³¼ì— ë°˜ì˜ëœ í–‰ì˜ ìˆ˜ëŠ” : " + n);
+			//conn.close();	//ì—°ê²° ì¢…ë£Œ
 		} catch (SQLException e) {
-			System.out.println("sql½ÇÇà¿¡ ¹®Á¦°¡ ÀÖ½À´Ï´Ù.");
+			System.out.println("sqlì‹¤í–‰ì— ë¬¸ì œê°€ ìˆìŠµë‹ˆë‹¤.");
 			// TODO Auto-generated catch block
-			//e.printStackTrace();   ¿À·ù¸¦ ³ªÅ¸³»ÁÖ´Â ºÎºĞÀ¸·Î ¼ö¾÷½Ã°£¿¡´Â ÇÊ¿ä¾ø¾î ÁÖ¼®
+			//e.printStackTrace();   ì˜¤ë¥˜ë¥¼ ë‚˜íƒ€ë‚´ì£¼ëŠ” ë¶€ë¶„ìœ¼ë¡œ ìˆ˜ì—…ì‹œê°„ì—ëŠ” í•„ìš”ì—†ì–´ ì£¼ì„
 		}
 	}
 }
