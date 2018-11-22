@@ -1,4 +1,4 @@
-public class Polynomial {	//1501205 이상혁
+﻿public class Polynomial {
 	private int degree;
 	private float coef[] = new float[20];
 	

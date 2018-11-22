@@ -1,4 +1,4 @@
-public class OperatePoly {	//1501205 이상혁
+﻿public class OperatePoly {
 	private int degree_A = 0, degree_B = 0, degree_C = 0;
 	private int index_A = 0, index_B = 0, index_C = 0;
 	private int expo_A, expo_B;

@@ -1,4 +1,4 @@
-public class Ex5_4 {	//1501205 이상혁
+﻿public class Ex5_4 {
 
 	public static void main(String[] args) {
 		float a[] = new float[] {4,3,5,0};

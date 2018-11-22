@@ -1,4 +1,4 @@
-public class main {	//1501205 이상혁
+﻿public class main {
 
 	public static void main(String[] args) {
 		Ex5_1 e1 = new Ex5_1();

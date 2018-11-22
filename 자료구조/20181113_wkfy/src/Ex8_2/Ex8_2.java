@@ -1,4 +1,4 @@
-package Ex8_2;	//1501205 이상혁
+﻿package Ex8_2;
 
 interface Queue {
 	boolean isEmpty();

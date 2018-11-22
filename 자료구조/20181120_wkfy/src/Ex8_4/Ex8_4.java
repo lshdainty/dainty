@@ -1,4 +1,4 @@
-package Ex8_4;	//1501205 이상혁
+﻿package Ex8_4;
 
 class DQNode{
 	char data;

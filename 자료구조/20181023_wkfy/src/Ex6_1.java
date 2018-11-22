@@ -1,4 +1,4 @@
-public class Ex6_1 {	//1501205 이상혁
+﻿public class Ex6_1 {
 
 	public static void main(String[] args) {
 		LinkedList L = new LinkedList();

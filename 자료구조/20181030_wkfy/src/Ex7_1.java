@@ -1,4 +1,4 @@
-interface Stack{	//1501205 이상혁
+﻿interface Stack{
 	boolean isEmpty();
 	void push(char item);
 	char pop();

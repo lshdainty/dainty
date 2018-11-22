@@ -1,4 +1,4 @@
-public class Ex5_2 {	//1501205 이상혁
+﻿public class Ex5_2 {
 	
 	public void E_2() {
 		
