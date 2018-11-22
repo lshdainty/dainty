@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="2018-02학기 Web2.0과제(aJax 뷰만들기)_1501205_이상혁">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="2018-02학기_Web2.0과제(aJax_뷰만들기)_1501205_이상혁"/>
+        <property name="java-output-path" value="/2018-02학기 Web2.0과제(aJax 뷰만들기)_1501205_이상혁/build/classes"/>
+    </wb-module>
+</project-modules>
