@@ -5,6 +5,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +18,11 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼즐 패널
-	MainFrame mainFrame;	//메인 프레임 저장
+public class PuzzlePanel extends JPanel implements ActionListener,KeyListener{	//그림퍼즐 패널
+	MainFrame mainFrame;	//게임에서만 설정변경하기 위한 mainFrame(panel을 정중앙에 하기위해서)
+	String id;
 	JButton[] btn;	//버튼 배열 생성
+	long start_time,current_time,actual_time;	//시작시간 , 컴퓨터 시간 , 실제 게임진행 시간
 	int count;	//원본에서는 사용하는것이 없지만 이걸 클릭 카운트로 사용 예정
 	int game[];		//전체 게임 열과 행의 곱한 수
 	int row = 0;
@@ -31,9 +35,9 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 	 * 픽셀을 읽거나 쓸 수 있다.
 	 */
 	
-	public PuzzlePanel(MainFrame mainFrame) {	//생성자
+	public PuzzlePanel(MainFrame mainFrame, String id) {	//생성자
 		this.mainFrame = mainFrame;	//생성된 프레임객체를 받아와서 저장한다.
-		
+		this.id = id;	//id저장
 		String x = JOptionPane.showInputDialog(null,"행의 숫자를 입력해주세요",JOptionPane.OK_CANCEL_OPTION);	//행을 입력받는다.
 		String y = JOptionPane.showInputDialog(null,"열의 숫자를 입력해주세요",JOptionPane.OK_CANCEL_OPTION);	//열을 입력받는다.
 		photo = JOptionPane.showInputDialog(null,"사진 경로를 입력해주세요",JOptionPane.OK_CANCEL_OPTION);	//사진 경로를 입력받는다.
@@ -43,11 +47,16 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 		//원본 그림 읽기
 		try {
 			original = ImageIO.read(new File(photo));
-			
 		} catch (IOException e) {
-			e.printStackTrace();
+			try {
+				JOptionPane.showMessageDialog(null, "그림을 불러오지 못했습니다. 기본 그림으로 게임 시작합니다.");
+				original = ImageIO.read(new File("test2.jpg"));
+			} catch (IOException e1) {}
 		}
-		mainFrame.setSize(original.getWidth(this),original.getHeight(this));	//프레임의 사이즈를 사진의 크기로 변경한다.
+		this.mainFrame.setSize(original.getWidth(this),original.getHeight(this));	//프레임의 사이즈를 사진의 크기로 변경한다.
+		this.mainFrame.addKeyListener(this);
+		setFocusable(true);	//이것이 이벤트 포커스를 받을 수 있도록 한다.
+		this.mainFrame.setLocationRelativeTo(null);	//화면 정중앙 코드
 		int width = original.getWidth(this)/col;	//넓이는 사진의 전체 넓이에서 열의 수만큼 나눈다.
 		int height = original.getHeight(this)/row;	//높이는 사진의 전체 높이에서 행의 수만큼 나눈다.
 		
@@ -73,18 +82,19 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 		for(int i=0; i<row*col; i++) {
 			btn[i] = new JButton();	//인덱스 수만큼 버튼을 생성
 			btn[i].addActionListener(this);	//각 버튼에 이벤트 리스터 생성
+			btn[i].addKeyListener(this);
 			add(btn[i]);	//버튼 배열 추가
 		}
 		
 		shuffle();	//숫자 섞고 버튼에 이미지 입히기
 		setLayout(new GridLayout(row,col));	//레이아웃은 grid로 하고 행,열수를 지정
 		
-		//setResizable(false);	//사이즈를 늘리면 버튼이 커지고 이미지는 그대로이므로 크기를 고정시킨다.
-		//setVisible(true);	//눈에 보이도록 한다.
+		this.mainFrame.setResizable(false);	//사이즈를 늘리면 버튼이 커지고 이미지는 그대로이므로 크기를 고정시킨다.
 	}	//ImagePuzzle01메소드
 	
 	//숫자 섞고 버튼에 이미지 입히기
 	private void shuffle() {
+		start_time = System.currentTimeMillis();	//게임 시작 시간을 저장
 		Random rnd = new Random();
 			
 		do {
@@ -138,20 +148,25 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 				
 				//여기서 게임 종료확인
 				if(endGame()) {	//인덱스 번호와 게임의 번호가 같은지 확인 true이면
+					current_time = System.currentTimeMillis();	//게임 종료시간을 저장
+					actual_time = current_time - start_time;	//게임을 즐긴 시간을 저장
 					JOptionPane.showMessageDialog(this, "Success!");	//성공했다는 메세지를 출력
 					JOptionPane.showMessageDialog(this, count+"번 클릭했습니다.");
 					//게임 재시작을 확인
 					int reStart = JOptionPane.showConfirmDialog(this,"restart?","exit?",JOptionPane.YES_NO_OPTION);
 					if(reStart==JOptionPane.NO_OPTION) {
-						mainFrame.change("login");
+						mainFrame.fchange("finishPanel",id,count,actual_time);
 					}
 					else if(reStart==JOptionPane.YES_OPTION) {
 						count = 0;
+						start_time = 0;
+						current_time = 0;
+						actual_time = 0;
 						shuffle();	//섞기
 						repaint();	//다시 그리기
 					}
 					else {
-						System.exit(0);
+						mainFrame.fchange("finishPanel",id,count,actual_time);
 					}
 				}
 			}
@@ -169,4 +184,18 @@ public class PuzzlePanel extends JPanel implements ActionListener{	//그림퍼�
 		}
 		return endGame;
 	}	//endGame
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			int esc = JOptionPane.showConfirmDialog(null,"로그인 화면으로 돌아가시겠습니까?","",JOptionPane.YES_NO_OPTION);
+			if(esc==JOptionPane.YES_OPTION) {
+				mainFrame.change("login",id);
+			}
+		}
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {}
+	@Override
+	public void keyTyped(KeyEvent e) {}
 }
