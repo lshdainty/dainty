@@ -12,41 +12,44 @@ import javax.swing.JOptionPane;
 public class DBPanel {
 	
 	//싱글톤 생성 시작
-//	private static DBPanel instance = new DBPanel();
-//	public static DBPanel getInstance() {
-//		return instance;
-//	}
-//	private DBPanel() {};
+	private static DBPanel instance = new DBPanel();
+	public static DBPanel getInstance() {
+		return instance;
+	}
+	private DBPanel() {};
 	
 	//연결
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("드라이버 적재 성공");
+			//System.out.println("드라이버 적재 성공");
 		} catch (ClassNotFoundException e1) {
 			System.out.println("드라이버 적재 실패");
 		}	//드라이버 적재
 		
 		// 2. 데이터베이스 연결
-		///*
+		/*
 		String url ="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
 		String id = "study";
 		String pw = "study";
-		//*/
-		
-//		String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
-//		String id = "study";
-//		String pw = "study";
+		*/
 		
 		/*
+		String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String id = "study";
+		String pw = "study";
+		*/
+		
+		///*
 		String url = "jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";
 		String id = "s1501205";
 		String pw = "p1501205";
-		*/
+		//*/
+		
 		try {
 			conn = DriverManager.getConnection(url, id, pw);
-			System.out.println("데이터베이스 연결 성공.");
+			//System.out.println("데이터베이스 연결 성공.");
 		} catch (SQLException e) {
 			System.out.println("데이터 베이스 연결에 실패하였습니다..");
 		}
@@ -67,7 +70,7 @@ public class DBPanel {
 			pstmt.executeUpdate();
 			JOptionPane.showMessageDialog(null, "회원가입을 완료하였습니다.");
 		} catch (SQLException e) {
-			System.out.println("sql실행에 문제가 있습니다.");
+			JOptionPane.showMessageDialog(null, "회원가입에 문제가 있습니다.");
 		}finally {
 			if(pstmt!=null) {
 				try {pstmt.close();} catch (SQLException e) {}
@@ -93,7 +96,7 @@ public class DBPanel {
 			pstmt.executeUpdate();
 			JOptionPane.showMessageDialog(null, "기록을 완료하였습니다.");
 		} catch (SQLException e) {
-			System.out.println("sql실행에 문제가 있습니다.");
+			JOptionPane.showMessageDialog(null, "기록에 실패하였습니다.");
 		}finally {
 			if(pstmt!=null) {
 				try {pstmt.close();} catch (SQLException e) {}
@@ -127,7 +130,7 @@ public class DBPanel {
 				list.add(d);
 			}
 		}catch(Exception e) {
-			
+			System.out.println("로그를 불러오지 못했습니다.");
 		}finally {
 			if(rs!=null) {
 				try {rs.close();} catch (SQLException e) {}

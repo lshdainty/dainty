@@ -12,8 +12,8 @@ public class LoginPanel extends JPanel{
 	private JTextField userid;	//아이디입력
 	private JPasswordField userpw;	//비밀번호입력
 	private DBPanel db;
-	private String id = null;	//field에서 입력받은 값을 저장하는 변수
-	private char[] pw = null;	//field에서 입력받은 값을 저장하는 변수
+	private String id = "";	//field에서 입력받은 값을 저장하는 변수
+	private String pw = "";	//field에서 입력받은 값을 저장하는 변수
 	
 	public LoginPanel(MainFrame mainFrame) {	//생성자
 		this.mainFrame = mainFrame;
@@ -63,10 +63,12 @@ public class LoginPanel extends JPanel{
 		btnMember.addActionListener(new ActionListener() {	//회원가입 버튼에 리스터 설정
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if((id==null)||(pw==null)) {
+				if((id.equals(""))||(pw.equals(""))) {
+					System.out.println(id);
+					System.out.println(pw);
 					JOptionPane.showMessageDialog(null, "칸을 다 채워주세요");
 				}
-				else {
+				else { 
 					memberInsert();	//회원가입
 				}
 			}
@@ -75,26 +77,16 @@ public class LoginPanel extends JPanel{
 	
 	public int loginCheck() {
 		id = userid.getText();	//입력한 id값 불러오기
-		pw = userpw.getPassword();	//입력한 passwd값 불러오기
-		String passwd = null;
-		for(int i=0; i<pw.length; i++) {
-			passwd = passwd + pw[i];	//배열로 저장된 문자를 합친다
-		} 
-		passwd = passwd.substring(4,pw.length+4);	//null값이 비번에 같이 들어가있어서 삭제하는 과정
-		db = new DBPanel();
-		int num = db.select(id, passwd);	//db에서 로그인 값 가져오기
+		pw = String.valueOf(userpw.getPassword());	//입력한 passwd값 불러오기
+		db = DBPanel.getInstance();
+		int num = db.select(id, pw);	//db에서 로그인 값 가져오기
 		return num;
 	}
 	
 	public void memberInsert() {
 		id = userid.getText();	//입력한 id값 불러오기
-		pw = userpw.getPassword();	//입력한 passwd값 불러오기
-		String passwd = null;
-		for(int i=0; i<pw.length; i++) {	
-			passwd = passwd + pw[i];	//배열로 저장된 문자를 합친다.
-		} 
-		passwd = passwd.substring(4,pw.length+4);	//null값이 비번에 같이 들어가있어서 삭제하는 과정
-		db = new DBPanel();
-		db.insertmember(id, passwd);	//db에 id,pw 저장하기
+		pw = String.valueOf(userpw.getPassword());	//입력한 passwd값 불러오기
+		db = DBPanel.getInstance();
+		db.insertmember(id, pw);	//db에 id,pw 저장하기
 	}
 }

@@ -24,7 +24,7 @@ public class FinishPanel extends JPanel{
 		this.mainFrame = mainFrame;
 		time_format = new SimpleDateFormat("HH:mm:ss.SSS");	//우리에게 익숙한 시간포맷으로 변경한다.
 		show_time = time_format.format(actual_time-32400000);	//actual_time은 초로 되어있어 계산을 해야하며 한국시간 기준으로 9시간을 초로 계산해서 빼준다.
-		db = new DBPanel();
+		db = DBPanel.getInstance();
 		db.insertLog(id,count,show_time);	//db에 id와 클릭횟수 , 게임 시간을 저장한다.
 		ArrayList<DBData> list = db.selectLog(id);	//db에서 로그인한 id의 게임 기록을 가져온다.
 		//*************************************************
