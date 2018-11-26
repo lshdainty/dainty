@@ -43,6 +43,8 @@ public class LoginPanel extends JPanel{
 		btnLogin.addActionListener(new ActionListener() {	//로그인 버튼에 리스너 설정
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				id = userid.getText();	//입력한 id값 불러오기
+				pw = String.valueOf(userpw.getPassword());	//입력한 passwd값 불러오기
 				int num = loginCheck();	//db에서 로그인 성공하면 1을 반환
 				if(num == 1) {
 					JOptionPane.showMessageDialog(null, "로그인 성공");
@@ -63,29 +65,37 @@ public class LoginPanel extends JPanel{
 		btnMember.addActionListener(new ActionListener() {	//회원가입 버튼에 리스터 설정
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				id = userid.getText();	//입력한 id값 불러오기
+				pw = String.valueOf(userpw.getPassword());	//입력한 passwd값 불러오기
 				if((id.equals(""))||(pw.equals(""))) {
-					System.out.println(id);
-					System.out.println(pw);
 					JOptionPane.showMessageDialog(null, "칸을 다 채워주세요");
 				}
-				else { 
-					memberInsert();	//회원가입
+				else {
+					int num = idCheck();
+					if(num == 1) {
+						JOptionPane.showMessageDialog(null, "이미 사용중인 id입니다.");
+					}
+					else if(num == 0){
+						memberInsert();	//회원가입
+					}
 				}
 			}
 		});
 	}
 	
 	public int loginCheck() {
-		id = userid.getText();	//입력한 id값 불러오기
-		pw = String.valueOf(userpw.getPassword());	//입력한 passwd값 불러오기
 		db = DBPanel.getInstance();
 		int num = db.select(id, pw);	//db에서 로그인 값 가져오기
 		return num;
 	}
 	
+	public int idCheck() {
+		db = DBPanel.getInstance();
+		int num = db.userCheck(id);
+		return num;
+	}
+	
 	public void memberInsert() {
-		id = userid.getText();	//입력한 id값 불러오기
-		pw = String.valueOf(userpw.getPassword());	//입력한 passwd값 불러오기
 		db = DBPanel.getInstance();
 		db.insertmember(id, pw);	//db에 id,pw 저장하기
 	}

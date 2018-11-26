@@ -29,11 +29,11 @@ public class DBPanel {
 		}	//드라이버 적재
 		
 		// 2. 데이터베이스 연결
-		/*
+		///*
 		String url ="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
 		String id = "study";
 		String pw = "study";
-		*/
+		//*/
 		
 		/*
 		String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
@@ -41,11 +41,11 @@ public class DBPanel {
 		String pw = "study";
 		*/
 		
-		///*
+		/*
 		String url = "jdbc:oracle:thin:@net.yjc.ac.kr:1521:orcl";
 		String id = "s1501205";
 		String pw = "p1501205";
-		//*/
+		*/
 		
 		try {
 			conn = DriverManager.getConnection(url, id, pw);
@@ -88,7 +88,7 @@ public class DBPanel {
 		
 		try {
 			conn = getConnection();
-			String sql = "insert into game_log values(?,?,?)";
+			String sql = "insert into game_log(id,count,time) values(?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setInt(2, count);
@@ -117,7 +117,7 @@ public class DBPanel {
 			conn = getConnection();
 			list = new ArrayList<>();
 			
-			String sql = "select * from game_log where id = ?";
+			String sql = "select * from game_log where id = ? order by insert_time";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -127,6 +127,7 @@ public class DBPanel {
 				d.setId(rs.getString("id"));
 				d.setCount(rs.getInt("count"));
 				d.setTime(rs.getString("time"));
+				d.setInsertTime(rs.getTimestamp("insert_time"));
 				list.add(d);
 			}
 		}catch(Exception e) {
@@ -143,6 +144,39 @@ public class DBPanel {
 			}
 		}
 		return list;
+	}
+	
+	public int userCheck(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int num = 0;
+		
+		try{
+			conn = getConnection();
+			String sql = "select * from game where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				num = 1;
+			}
+			else {
+				num = 0;
+			}
+		} catch (SQLException e) {
+		}finally {
+			if(rs!=null) {
+				try {rs.close();} catch (SQLException e) {}
+			}
+			if(pstmt!=null) {
+				try {pstmt.close();} catch (SQLException e) {}
+			}
+			if(conn != null) {
+				try {conn.close();} catch (SQLException e) {}
+			}
+		}
+		return num;
 	}
 	
 	//회원조회
