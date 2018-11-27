@@ -36,6 +36,7 @@ public class FinishPanel extends JPanel{
 		column.add("id");
 		column.add("count");
 		column.add("time");
+		column.add("day");
 		Vector<Object> dataSet = new Vector<>();	//행의 데이터를 저장하는 객체
 		
 		for(DBData d : list){
@@ -43,6 +44,7 @@ public class FinishPanel extends JPanel{
 			row.add(d.getId());	//db에서 id값 가져오기
 			row.add(d.getCount());	//db에서 클릭값 가져오기
 			row.add(d.getTime());	//db에서 게임시간값 가져오기
+			row.add(d.getInsertTime());
 			dataSet.add(row);	//dateSet에 행을 추가
 		}
 		

@@ -1,9 +1,12 @@
 package Test1;
 
+import java.sql.Timestamp;
+
 public class DBData {
 	private int count;
 	private String time;
 	private String id;
+	private Timestamp insertTime;
 	
 	public int getCount() {
 		return count;
@@ -24,5 +27,12 @@ public class DBData {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public Timestamp getInsertTime() {
+		return insertTime;
+	}
+	public void setInsertTime(Timestamp insertTime) {
+		this.insertTime = insertTime;
 	}
 }
